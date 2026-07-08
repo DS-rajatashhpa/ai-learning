@@ -14,11 +14,12 @@ Same user question. Different system prompt. Completely different answer.
 """
 
 import os
-import google.generativeai as genai
+from groq import Groq
 from dotenv import load_dotenv
 
 load_dotenv()
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 USER_QUESTION = "Should I be worried?"
 
@@ -38,12 +39,14 @@ personas = [
 ]
 
 for persona in personas:
-    model = genai.GenerativeModel(
-        "gemini-1.5-flash",
-        system_instruction=persona["system"]
+    response = client.chat.completions.create(
+        model="llama-3.3-70b-versatile",
+        messages=[
+            {"role": "system", "content": persona["system"]},
+            {"role": "user", "content": USER_QUESTION}
+        ]
     )
-    response = model.generate_content(USER_QUESTION)
     print(f"[{persona['name']}]")
     print(f"System: {persona['system']}")
-    print(f"Answer: {response.text.strip()}")
+    print(f"Answer: {response.choices[0].message.content.strip()}")
     print("=" * 60)

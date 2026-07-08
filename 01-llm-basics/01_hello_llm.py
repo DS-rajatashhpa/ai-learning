@@ -6,23 +6,26 @@ This script shows you the raw anatomy of every LLM call you will ever make.
 """
 
 import os
-import google.generativeai as genai
+from groq import Groq
 from dotenv import load_dotenv
 
 load_dotenv()
 
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
-model = genai.GenerativeModel("gemini-1.5-flash")
-
-response = model.generate_content("What is a tomato — in exactly 2 sentences.")
+response = client.chat.completions.create(
+    model="llama-3.3-70b-versatile",
+    messages=[
+        {"role": "user", "content": "What is a tomato — in exactly 2 sentences."}
+    ]
+)
 
 print("=" * 50)
 print("RESPONSE TEXT:")
-print(response.text)
+print(response.choices[0].message.content)
 print("=" * 50)
 print("TOKEN USAGE:")
-print(f"  Input tokens  : {response.usage_metadata.prompt_token_count}")
-print(f"  Output tokens : {response.usage_metadata.candidates_token_count}")
-print(f"  Total tokens  : {response.usage_metadata.total_token_count}")
+print(f"  Input tokens  : {response.usage.prompt_tokens}")
+print(f"  Output tokens : {response.usage.completion_tokens}")
+print(f"  Total tokens  : {response.usage.total_tokens}")
 print("=" * 50)

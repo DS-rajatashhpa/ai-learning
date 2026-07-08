@@ -14,21 +14,22 @@ Rule of thumb:
 """
 
 import os
-import google.generativeai as genai
+from groq import Groq
 from dotenv import load_dotenv
 
 load_dotenv()
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 PROMPT = "Give me a creative name for an AI assistant that manages a farm."
 
 temperatures = [0.0, 0.5, 1.0, 1.5]
 
 for temp in temperatures:
-    model = genai.GenerativeModel(
-        "gemini-1.5-flash",
-        generation_config=genai.GenerationConfig(temperature=temp)
+    response = client.chat.completions.create(
+        model="llama-3.3-70b-versatile",
+        messages=[{"role": "user", "content": PROMPT}],
+        temperature=temp
     )
-    response = model.generate_content(PROMPT)
-    print(f"Temperature {temp} → {response.text.strip()}")
+    print(f"Temperature {temp} → {response.choices[0].message.content.strip()}")
     print("-" * 60)
