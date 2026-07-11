@@ -9,7 +9,7 @@ from pydantic import BaseModel
 from pathlib import Path
 from datetime import date
 from api.db import setup, get_conn
-from api.ai import suggest_meals, check_recipe_availability, get_inventory_snapshot, generate_shopping_list, get_all_recipes
+from api.ai import suggest_meals, check_recipe_availability, get_inventory_snapshot, generate_shopping_list, get_all_recipes, generate_week_plan
 
 app = FastAPI(title="Maid Assistant")
 
@@ -260,3 +260,81 @@ def list_recipes(category: str = None):
         result.append({**dict(r), "availability": avail})
 
     return {"recipes": result}
+
+
+# --- Week Plan ---
+
+DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
+
+def _week_key():
+    from datetime import date
+    d = date.today()
+    return f"{d.isocalendar()[0]}-W{d.isocalendar()[1]:02d}"
+
+
+@app.get("/api/plan/week")
+def get_week_plan():
+    wk = _week_key()
+    with get_conn() as conn:
+        rows = conn.execute(
+            "SELECT day_name, meal_type, recipe_id, recipe_name FROM week_plans WHERE week_key = ?",
+            (wk,)
+        ).fetchall()
+
+    plan = {day: {} for day in DAYS}
+    for r in rows:
+        plan[r["day_name"]][r["meal_type"]] = {
+            "recipe_id": r["recipe_id"],
+            "recipe_name": r["recipe_name"]
+        }
+    return {"week_key": wk, "plan": plan, "has_plan": len(rows) > 0}
+
+
+class GenerateWeekRequest(BaseModel):
+    people: int = 3
+
+
+@app.post("/api/plan/week/generate")
+def generate_week(req: GenerateWeekRequest):
+    wk = _week_key()
+    plan = generate_week_plan(people=req.people)
+
+    with get_conn() as conn:
+        conn.execute("DELETE FROM week_plans WHERE week_key = ?", (wk,))
+        for day, meals in plan.items():
+            for meal_type, info in meals.items():
+                conn.execute(
+                    "INSERT OR REPLACE INTO week_plans (week_key, day_name, meal_type, recipe_id, recipe_name) VALUES (?,?,?,?,?)",
+                    (wk, day, meal_type, info.get("recipe_id"), info.get("recipe_name"))
+                )
+
+    return {"week_key": wk, "plan": plan}
+
+
+class UpdateWeekSlotRequest(BaseModel):
+    day_name: str
+    meal_type: str
+    recipe_name: str
+    recipe_id: str = None
+
+
+@app.post("/api/plan/week/update")
+def update_week_slot(req: UpdateWeekSlotRequest):
+    wk = _week_key()
+    # Resolve recipe_id if not provided
+    recipe_id = req.recipe_id
+    if not recipe_id:
+        with get_conn() as conn:
+            row = conn.execute(
+                "SELECT id FROM recipes WHERE name = ?", (req.recipe_name,)
+            ).fetchone()
+            if row:
+                recipe_id = row["id"]
+
+    with get_conn() as conn:
+        conn.execute(
+            "INSERT OR REPLACE INTO week_plans (week_key, day_name, meal_type, recipe_id, recipe_name) VALUES (?,?,?,?,?)",
+            (wk, req.day_name, req.meal_type, recipe_id, req.recipe_name)
+        )
+    return {"status": "updated", "day": req.day_name, "meal_type": req.meal_type, "recipe": req.recipe_name}

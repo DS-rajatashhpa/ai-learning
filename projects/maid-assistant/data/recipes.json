@@ -3659,6 +3659,388 @@
           "unit": "grams"
         }
       ]
+    },
+    {
+      "id": "eggless_chocolate_brownie",
+      "name": "Chocolate Brownie",
+      "category": "baking",
+      "frequency": "occasional",
+      "cook_time_minutes": 45,
+      "ingredients": [
+        {
+          "name": "maida",
+          "quantity": 120,
+          "unit": "grams"
+        },
+        {
+          "name": "cocoa_powder",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "sugar",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "butter",
+          "quantity": 120,
+          "unit": "ml"
+        },
+        {
+          "name": "condensed_milk",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "milk",
+          "quantity": 60,
+          "unit": "ml"
+        },
+        {
+          "name": "baking_powder",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "vanilla_essence",
+          "quantity": 5,
+          "unit": "ml"
+        },
+        {
+          "name": "chocolate_chips",
+          "quantity": 60,
+          "unit": "grams"
+        }
+      ]
+    },
+    {
+      "id": "walnut_fudge_brownie",
+      "name": "Walnut Fudge Brownie",
+      "category": "baking",
+      "frequency": "occasional",
+      "cook_time_minutes": 50,
+      "ingredients": [
+        {
+          "name": "dark_chocolate",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "maida",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "cocoa_powder",
+          "quantity": 40,
+          "unit": "grams"
+        },
+        {
+          "name": "sugar",
+          "quantity": 180,
+          "unit": "grams"
+        },
+        {
+          "name": "butter",
+          "quantity": 100,
+          "unit": "ml"
+        },
+        {
+          "name": "condensed_milk",
+          "quantity": 180,
+          "unit": "grams"
+        },
+        {
+          "name": "walnuts",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "baking_powder",
+          "quantity": 4,
+          "unit": "grams"
+        },
+        {
+          "name": "vanilla_essence",
+          "quantity": 5,
+          "unit": "ml"
+        }
+      ]
+    },
+    {
+      "id": "cream_cheese_brownie",
+      "name": "Cream Cheese Swirl Brownie",
+      "category": "baking",
+      "frequency": "occasional",
+      "cook_time_minutes": 55,
+      "ingredients": [
+        {
+          "name": "maida",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "cocoa_powder",
+          "quantity": 50,
+          "unit": "grams"
+        },
+        {
+          "name": "sugar",
+          "quantity": 180,
+          "unit": "grams"
+        },
+        {
+          "name": "butter",
+          "quantity": 100,
+          "unit": "ml"
+        },
+        {
+          "name": "condensed_milk",
+          "quantity": 160,
+          "unit": "grams"
+        },
+        {
+          "name": "curd",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "baking_powder",
+          "quantity": 4,
+          "unit": "grams"
+        },
+        {
+          "name": "vanilla_essence",
+          "quantity": 5,
+          "unit": "ml"
+        },
+        {
+          "name": "chocolate_chips",
+          "quantity": 50,
+          "unit": "grams"
+        }
+      ]
+    },
+    {
+      "id": "chocolate_chip_cookies",
+      "name": "Chocolate Chip Cookies",
+      "category": "baking",
+      "frequency": "occasional",
+      "cook_time_minutes": 30,
+      "ingredients": [
+        {
+          "name": "maida",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "butter",
+          "quantity": 100,
+          "unit": "ml"
+        },
+        {
+          "name": "powdered_sugar",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "condensed_milk",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "baking_soda",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "vanilla_essence",
+          "quantity": 5,
+          "unit": "ml"
+        },
+        {
+          "name": "chocolate_chips",
+          "quantity": 80,
+          "unit": "grams"
+        }
+      ]
+    },
+    {
+      "id": "butter_cookies",
+      "name": "Butter Cookies",
+      "category": "baking",
+      "frequency": "occasional",
+      "cook_time_minutes": 25,
+      "ingredients": [
+        {
+          "name": "maida",
+          "quantity": 250,
+          "unit": "grams"
+        },
+        {
+          "name": "butter",
+          "quantity": 150,
+          "unit": "ml"
+        },
+        {
+          "name": "powdered_sugar",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "condensed_milk",
+          "quantity": 40,
+          "unit": "grams"
+        },
+        {
+          "name": "baking_powder",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "vanilla_essence",
+          "quantity": 5,
+          "unit": "ml"
+        }
+      ]
+    },
+    {
+      "id": "cashew_cookies",
+      "name": "Cashew Cookies",
+      "category": "baking",
+      "frequency": "occasional",
+      "cook_time_minutes": 30,
+      "ingredients": [
+        {
+          "name": "maida",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "butter",
+          "quantity": 100,
+          "unit": "ml"
+        },
+        {
+          "name": "powdered_sugar",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "cashews",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "condensed_milk",
+          "quantity": 50,
+          "unit": "grams"
+        },
+        {
+          "name": "baking_powder",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "vanilla_essence",
+          "quantity": 4,
+          "unit": "ml"
+        }
+      ]
+    },
+    {
+      "id": "oat_raisin_cookies",
+      "name": "Oat Cookies",
+      "category": "baking",
+      "frequency": "occasional",
+      "cook_time_minutes": 25,
+      "ingredients": [
+        {
+          "name": "oats",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "maida",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "butter",
+          "quantity": 80,
+          "unit": "ml"
+        },
+        {
+          "name": "sugar",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "condensed_milk",
+          "quantity": 50,
+          "unit": "grams"
+        },
+        {
+          "name": "baking_soda",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "vanilla_essence",
+          "quantity": 4,
+          "unit": "ml"
+        }
+      ]
+    },
+    {
+      "id": "cocoa_crinkle_cookies",
+      "name": "Cocoa Crinkle Cookies",
+      "category": "baking",
+      "frequency": "occasional",
+      "cook_time_minutes": 35,
+      "ingredients": [
+        {
+          "name": "maida",
+          "quantity": 180,
+          "unit": "grams"
+        },
+        {
+          "name": "cocoa_powder",
+          "quantity": 50,
+          "unit": "grams"
+        },
+        {
+          "name": "sugar",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "powdered_sugar",
+          "quantity": 40,
+          "unit": "grams"
+        },
+        {
+          "name": "butter",
+          "quantity": 80,
+          "unit": "ml"
+        },
+        {
+          "name": "condensed_milk",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "baking_powder",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "vanilla_essence",
+          "quantity": 5,
+          "unit": "ml"
+        }
+      ]
     }
   ]
 }

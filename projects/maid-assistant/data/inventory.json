@@ -348,5 +348,67 @@
       "unit": "ml",
       "threshold": 50
     }
+  },
+  "baking": {
+    "maida": {
+      "quantity": 1000,
+      "unit": "grams",
+      "threshold": 300
+    },
+    "sugar": {
+      "quantity": 800,
+      "unit": "grams",
+      "threshold": 200
+    },
+    "powdered_sugar": {
+      "quantity": 400,
+      "unit": "grams",
+      "threshold": 100
+    },
+    "cocoa_powder": {
+      "quantity": 200,
+      "unit": "grams",
+      "threshold": 50
+    },
+    "baking_powder": {
+      "quantity": 50,
+      "unit": "grams",
+      "threshold": 20
+    },
+    "baking_soda": {
+      "quantity": 50,
+      "unit": "grams",
+      "threshold": 20
+    },
+    "vanilla_essence": {
+      "quantity": 30,
+      "unit": "ml",
+      "threshold": 10
+    },
+    "condensed_milk": {
+      "quantity": 400,
+      "unit": "grams",
+      "threshold": 100
+    },
+    "chocolate_chips": {
+      "quantity": 200,
+      "unit": "grams",
+      "threshold": 50
+    },
+    "dark_chocolate": {
+      "quantity": 150,
+      "unit": "grams",
+      "threshold": 50
+    },
+    "cashews": {
+      "quantity": 100,
+      "unit": "grams",
+      "threshold": 50
+    },
+    "walnuts": {
+      "quantity": 100,
+      "unit": "grams",
+      "threshold": 50
+    }
   }
 }

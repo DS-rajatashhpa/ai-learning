@@ -199,3 +199,78 @@ def generate_shopping_list() -> list[dict]:
         })
 
     return items
+
+
+def generate_week_plan(people: int = 3) -> dict:
+    """AI generates a full Mon-Sun meal plan (breakfast + lunch + dinner)."""
+    inventory = get_inventory_snapshot()
+    recipes = get_all_recipes()
+
+    checked = []
+    for r in recipes:
+        avail = check_recipe_availability(r, inventory, people)
+        checked.append({**r, "availability": avail})
+
+    ready = [f'{r["name"]} ({r["category"]})' for r in checked if r["availability"]["status"] == "ready"]
+    low   = [f'{r["name"]} ({r["category"]})' for r in checked if r["availability"]["status"] == "low"]
+
+    system = """You are a weekly meal planner for a vegetarian North Indian family in Gurgaon (3 people).
+Plan diverse, realistic meals. Vary categories across the week. Don't repeat the same dish.
+Breakfast = light (poha/upma/chila/oats/sandwich). Lunch = filling (dal+sabzi, pasta, noodles, wrap).
+Dinner = medium (lighter than lunch, wraps/salad/sabzi+roti ok).
+Respond ONLY with valid JSON."""
+
+    prompt = f"""Plan a full Mon-Sun week for breakfast, lunch, dinner.
+
+READY recipes (prefer these): {', '.join(ready[:40])}
+LOW STOCK (use sparingly): {', '.join(low[:15])}
+
+Rules:
+- No dish repeated more than twice in the week
+- Vary the category each day (don't do dal for lunch Mon AND Tue)
+- Breakfast must be quick (under 20 min)
+- Include at least 1 pasta, 1 noodles, 1 wrap, 1 burger or sandwich across the week
+- Saturday dinner = special/fun (burger, pasta, brownie for dessert)
+- Sunday lunch = elaborate (rajma/chole/biryani level)
+
+Respond with JSON:
+{{
+  "days": {{
+    "Monday": {{"breakfast": "recipe name", "lunch": "recipe name", "dinner": "recipe name"}},
+    "Tuesday": {{"breakfast": "...", "lunch": "...", "dinner": "..."}},
+    "Wednesday": {{"breakfast": "...", "lunch": "...", "dinner": "..."}},
+    "Thursday": {{"breakfast": "...", "lunch": "...", "dinner": "..."}},
+    "Friday": {{"breakfast": "...", "lunch": "...", "dinner": "..."}},
+    "Saturday": {{"breakfast": "...", "lunch": "...", "dinner": "..."}},
+    "Sunday": {{"breakfast": "...", "lunch": "...", "dinner": "..."}}
+  }}
+}}"""
+
+    response = _client().chat.completions.create(
+        model="llama-3.3-70b-versatile",
+        messages=[
+            {"role": "system", "content": system},
+            {"role": "user", "content": prompt}
+        ],
+        temperature=0.5,
+        response_format={"type": "json_object"}
+    )
+
+    ai_result = json.loads(response.choices[0].message.content)
+    days = ai_result.get("days", {})
+
+    recipe_map = {r["name"]: r for r in checked}
+
+    result = {}
+    for day, meals in days.items():
+        result[day] = {}
+        for meal_type, recipe_name in meals.items():
+            recipe = recipe_map.get(recipe_name)
+            result[day][meal_type] = {
+                "recipe_id": recipe["id"] if recipe else None,
+                "recipe_name": recipe_name,
+                "category": recipe["category"] if recipe else "unknown",
+                "availability": recipe["availability"]["status"] if recipe else "unknown"
+            }
+
+    return result

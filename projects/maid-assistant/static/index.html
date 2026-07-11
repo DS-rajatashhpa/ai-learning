@@ -12,101 +12,141 @@
   --yellow: #fbbf24; --yellow-dim: #3a2e0a;
   --red: #f87171; --red-dim: #3a1212;
   --blue: #60a5fa; --blue-dim: #1a2a3a;
+  --purple: #c084fc; --purple-dim: #2a1a3a;
   --text: #e2e8f0; --muted: #64748b; --card: #1e2130;
 }
 body { background: var(--bg); color: var(--text); font-family: -apple-system, 'Inter', sans-serif; min-height: 100vh; }
-header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
-header h1 { font-size: 17px; font-weight: 600; color: var(--accent); }
-.tabs { display: flex; gap: 4px; padding: 14px 24px 0; border-bottom: 1px solid var(--border); background: var(--surface); }
-.tab { padding: 8px 18px; border-radius: 8px 8px 0 0; cursor: pointer; font-size: 14px; color: var(--muted); border: 1px solid transparent; border-bottom: none; background: transparent; }
+header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; }
+header h1 { font-size: 16px; font-weight: 600; color: var(--accent); }
+.tabs { display: flex; gap: 2px; padding: 12px 24px 0; border-bottom: 1px solid var(--border); background: var(--surface); overflow-x: auto; }
+.tab { padding: 7px 16px; border-radius: 8px 8px 0 0; cursor: pointer; font-size: 13px; color: var(--muted); border: 1px solid transparent; border-bottom: none; background: transparent; white-space: nowrap; }
 .tab.active { background: var(--bg); color: var(--text); border-color: var(--border); }
-.page { display: none; padding: 20px; max-width: 1000px; margin: 0 auto; }
+.page { display: none; padding: 20px; max-width: 1040px; margin: 0 auto; }
 .page.active { display: block; }
 
-.suggest-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px; margin-bottom: 20px; }
-.suggest-bar h2 { font-size: 14px; color: var(--muted); margin-bottom: 14px; }
-.controls { display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-end; }
-.field { display: flex; flex-direction: column; gap: 5px; }
+/* Controls */
+.bar { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 18px; }
+.bar h2 { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+.row { display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-end; }
+.field { display: flex; flex-direction: column; gap: 4px; }
 .field label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 500; }
-input[type="text"], select { background: var(--bg); border: 1px solid var(--border); color: var(--text); border-radius: 8px; padding: 9px 13px; font-size: 14px; outline: none; }
-input[type="text"] { width: 260px; }
+input[type="text"], select { background: var(--bg); border: 1px solid var(--border); color: var(--text); border-radius: 7px; padding: 8px 12px; font-size: 13px; outline: none; }
 input[type="text"]:focus, select:focus { border-color: var(--accent); }
+input.wide { width: 260px; }
 select option { background: #1a1d27; }
 
-.btn { padding: 9px 18px; border-radius: 8px; border: none; font-size: 13px; font-weight: 500; cursor: pointer; }
+/* Buttons */
+.btn { padding: 8px 16px; border-radius: 7px; border: none; font-size: 13px; font-weight: 500; cursor: pointer; }
 .btn-primary { background: var(--accent); color: #000; }
 .btn-primary:hover { background: #22c55e; }
 .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
 .btn-ghost { background: var(--border); color: var(--text); }
 .btn-ghost:hover { filter: brightness(1.2); }
 .btn-sm { padding: 5px 10px; font-size: 12px; }
-.btn-icon { padding: 4px 8px; font-size: 14px; background: var(--border); border: none; border-radius: 6px; color: var(--text); cursor: pointer; line-height: 1; }
+.btn-icon { padding: 3px 7px; font-size: 13px; background: var(--border); border: none; border-radius: 5px; color: var(--text); cursor: pointer; }
 .btn-icon:hover { background: var(--accent); color: #000; }
 .btn-icon.del:hover { background: var(--red); color: #000; }
 
-.grid-4 { display: grid; grid-template-columns: repeat(auto-fill, minmax(255px, 1fr)); gap: 14px; }
-.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
-.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
-.card-name { font-size: 15px; font-weight: 600; }
-.card-meta { font-size: 11px; color: var(--muted); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.4px; }
-.card-reason { font-size: 13px; color: var(--muted); margin: 8px 0; line-height: 1.4; }
-.card-pair { font-size: 12px; color: var(--accent); margin-bottom: 10px; }
+/* Cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(255px, 1fr)); gap: 12px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 11px; padding: 15px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.card-name { font-size: 14px; font-weight: 600; }
+.card-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.card-text { font-size: 12px; color: var(--muted); margin: 6px 0; line-height: 1.4; }
+.card-accent { font-size: 12px; color: var(--accent); }
 
-.badge { padding: 3px 9px; border-radius: 20px; font-size: 11px; font-weight: 600; white-space: nowrap; flex-shrink: 0; }
+/* Badges */
+.badge { padding: 3px 8px; border-radius: 20px; font-size: 11px; font-weight: 600; white-space: nowrap; flex-shrink: 0; }
 .badge-ready { background: var(--accent-dim); color: var(--accent); }
 .badge-low { background: var(--yellow-dim); color: var(--yellow); }
 .badge-missing { background: var(--red-dim); color: var(--red); }
+.badge-unknown { background: var(--border); color: var(--muted); }
+.tag { display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 10px; font-weight: 600; background: var(--blue-dim); color: var(--blue); text-transform: uppercase; letter-spacing: 0.3px; }
+.tag-baking { background: var(--purple-dim); color: var(--purple); }
 
-.issues { margin-top: 8px; }
-.issue { font-size: 12px; color: var(--muted); padding: 2px 0; }
+/* Issues */
+.issues { margin-top: 6px; }
+.issue { font-size: 11px; padding: 1px 0; }
 .issue.missing { color: var(--red); }
 .issue.low { color: var(--yellow); }
 
-.section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
-.section-title { font-size: 15px; font-weight: 600; }
+/* Section header */
+.sh { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.sh-title { font-size: 15px; font-weight: 600; }
 
-.meal-row { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; display: flex; align-items: center; gap: 16px; margin-bottom: 10px; }
-.meal-type-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; min-width: 60px; }
-.meal-name { font-size: 15px; font-weight: 500; flex: 1; }
-.meal-people { font-size: 12px; color: var(--muted); }
+/* Today */
+.meal-row { background: var(--card); border: 1px solid var(--border); border-radius: 9px; padding: 12px 16px; display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+.meal-lbl { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; min-width: 58px; }
+.meal-name { font-size: 14px; font-weight: 500; flex: 1; }
+.meal-ppl { font-size: 12px; color: var(--muted); }
 
-.stats-row { display: flex; gap: 12px; margin-bottom: 18px; flex-wrap: wrap; }
-.stat { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; flex: 1; min-width: 90px; }
-.stat-val { font-size: 22px; font-weight: 700; }
-.stat-lbl { font-size: 11px; color: var(--muted); margin-top: 2px; }
+/* Stats */
+.stats { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+.stat { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 11px 14px; flex: 1; min-width: 80px; }
+.stat-v { font-size: 20px; font-weight: 700; }
+.stat-l { font-size: 11px; color: var(--muted); margin-top: 2px; }
 .green { color: var(--accent); } .yellow { color: var(--yellow); } .red { color: var(--red); }
 
-.inv-section { margin-bottom: 24px; }
-.inv-section h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 10px; font-weight: 600; }
-.inv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 8px; }
-.inv-item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 9px 12px; display: flex; align-items: center; gap: 6px; }
+/* Inventory */
+.inv-sec { margin-bottom: 20px; }
+.inv-sec h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 8px; font-weight: 600; }
+.inv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 7px; }
+.inv-item { background: var(--card); border: 1px solid var(--border); border-radius: 7px; padding: 8px 11px; display: flex; align-items: center; gap: 6px; }
 .inv-item.out { border-color: var(--red); background: var(--red-dim); }
 .inv-item.low { border-color: var(--yellow); background: var(--yellow-dim); }
-.inv-name { font-size: 13px; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.qty-display { font-size: 12px; color: var(--muted); white-space: nowrap; }
-.inv-item.out .qty-display { color: var(--red); font-weight: 600; }
-.inv-item.low .qty-display { color: var(--yellow); }
-.inv-actions { display: flex; gap: 3px; flex-shrink: 0; }
-.edit-input { width: 65px; background: var(--bg); border: 1px solid var(--accent); border-radius: 5px; color: var(--text); padding: 3px 6px; font-size: 12px; text-align: center; outline: none; }
+.inv-n { font-size: 12px; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.inv-q { font-size: 11px; color: var(--muted); white-space: nowrap; }
+.inv-item.out .inv-q { color: var(--red); font-weight: 600; }
+.inv-item.low .inv-q { color: var(--yellow); }
+.inv-acts { display: flex; gap: 3px; flex-shrink: 0; }
+.edit-inp { width: 60px; background: var(--bg); border: 1px solid var(--accent); border-radius: 4px; color: var(--text); padding: 2px 5px; font-size: 11px; text-align: center; outline: none; }
 
-.shop-row { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
-.shop-name { font-size: 14px; font-weight: 500; text-transform: capitalize; flex: 1; }
-.shop-detail { font-size: 11px; color: var(--muted); margin-top: 2px; }
-.shop-qty { font-size: 14px; color: var(--accent); font-weight: 600; white-space: nowrap; }
+/* Shopping */
+.shop-row { background: var(--card); border: 1px solid var(--border); border-radius: 9px; padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 7px; }
+.shop-n { font-size: 13px; font-weight: 500; text-transform: capitalize; flex: 1; }
+.shop-d { font-size: 11px; color: var(--muted); margin-top: 1px; }
+.shop-q { font-size: 13px; color: var(--accent); font-weight: 600; white-space: nowrap; }
 
+/* Week Planner */
+.week-grid { display: grid; grid-template-columns: 90px repeat(7, 1fr); gap: 6px; overflow-x: auto; }
+.week-header { font-size: 11px; font-weight: 600; color: var(--muted); text-align: center; padding: 8px 4px; text-transform: uppercase; letter-spacing: 0.4px; }
+.week-header.today-col { color: var(--accent); }
+.meal-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; padding: 8px 4px; display: flex; align-items: center; }
+.week-cell { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; min-height: 60px; cursor: pointer; position: relative; transition: border 0.1s; }
+.week-cell:hover { border-color: var(--accent); }
+.week-cell.today-col { border-color: #3a3d5e; }
+.cell-name { font-size: 12px; font-weight: 500; line-height: 1.3; }
+.cell-cat { font-size: 10px; color: var(--muted); margin-top: 3px; }
+.cell-status { position: absolute; top: 6px; right: 6px; width: 7px; height: 7px; border-radius: 50%; }
+.cell-status.ready { background: var(--accent); }
+.cell-status.low { background: var(--yellow); }
+.cell-status.missing { background: var(--red); }
+.cell-status.unknown { background: var(--muted); }
+.cell-empty { color: var(--muted); font-size: 11px; font-style: italic; }
+
+/* Recipes browse */
+.recipe-filter { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; align-items: center; }
+.recipe-filter input { width: 220px; }
+.recipe-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px; }
+.ing-list { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 5px; }
+.ing-chip { font-size: 11px; background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 2px 7px; color: var(--muted); }
+.ing-chip.missing { border-color: var(--red); color: var(--red); background: var(--red-dim); }
+.ing-chip.low { border-color: var(--yellow); color: var(--yellow); background: var(--yellow-dim); }
+
+/* Modal */
 .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 100; align-items: center; justify-content: center; }
 .modal-overlay.open { display: flex; }
-.modal { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px; width: 380px; max-width: 95vw; }
-.modal h3 { font-size: 16px; font-weight: 600; margin-bottom: 18px; }
-.modal-fields { display: grid; gap: 12px; }
-.modal-field label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 4px; }
-.modal-field input, .modal-field select { width: 100%; background: var(--bg); border: 1px solid var(--border); color: var(--text); border-radius: 8px; padding: 9px 12px; font-size: 14px; outline: none; }
-.modal-field input:focus { border-color: var(--accent); }
-.modal-actions { display: flex; gap: 10px; margin-top: 20px; justify-content: flex-end; }
+.modal { background: var(--surface); border: 1px solid var(--border); border-radius: 13px; padding: 22px; width: 380px; max-width: 95vw; max-height: 90vh; overflow-y: auto; }
+.modal h3 { font-size: 15px; font-weight: 600; margin-bottom: 16px; }
+.mf { display: grid; gap: 11px; }
+.mf label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 3px; }
+.mf input, .mf select { width: 100%; background: var(--bg); border: 1px solid var(--border); color: var(--text); border-radius: 7px; padding: 8px 11px; font-size: 13px; outline: none; }
+.mf input:focus { border-color: var(--accent); }
+.modal-acts { display: flex; gap: 8px; margin-top: 18px; justify-content: flex-end; }
 
-.loading { text-align: center; color: var(--muted); padding: 40px; font-size: 14px; }
-.empty { text-align: center; color: var(--muted); padding: 48px; font-size: 14px; }
-.tag { display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 10px; font-weight: 600; background: var(--blue-dim); color: var(--blue); text-transform: uppercase; letter-spacing: 0.3px; }
+.loading { text-align: center; color: var(--muted); padding: 36px; font-size: 13px; }
+.empty { text-align: center; color: var(--muted); padding: 44px; font-size: 13px; }
 </style>
 </head>
 <body>
@@ -117,55 +157,35 @@ select option { background: #1a1d27; }
 </header>
 
 <div class="tabs">
-  <button class="tab active" onclick="showTab('suggest',this)">Suggest Meals</button>
-  <button class="tab" onclick="showTab('today',this)">Today's Plan</button>
+  <button class="tab active" onclick="showTab('suggest',this)">Suggest</button>
+  <button class="tab" onclick="showTab('week',this)">Week Plan</button>
+  <button class="tab" onclick="showTab('today',this)">Today</button>
+  <button class="tab" onclick="showTab('recipes',this)">Recipes</button>
   <button class="tab" onclick="showTab('inventory',this)">Inventory</button>
   <button class="tab" onclick="showTab('shopping',this)">Shopping</button>
 </div>
 
 <!-- SUGGEST -->
 <div class="page active" id="page-suggest">
-  <div class="suggest-bar">
+  <div class="bar">
     <h2>What should the maid cook?</h2>
-    <div class="controls">
-      <div class="field">
-        <label>Tell the AI</label>
-        <input type="text" id="promptInput" placeholder="pasta tonight, no dal, something quick…" />
+    <div class="row">
+      <div class="field"><label>Tell the AI</label><input type="text" class="wide" id="promptInput" placeholder="pasta tonight, something light, no dal…" /></div>
+      <div class="field"><label>Meal</label>
+        <select id="mealType"><option value="breakfast">Breakfast</option><option value="lunch" selected>Lunch</option><option value="dinner">Dinner</option><option value="snack">Snack</option></select>
       </div>
-      <div class="field">
-        <label>Meal</label>
-        <select id="mealType">
-          <option value="breakfast">Breakfast</option>
-          <option value="lunch" selected>Lunch</option>
-          <option value="dinner">Dinner</option>
-          <option value="snack">Snack</option>
-        </select>
-      </div>
-      <div class="field">
-        <label>Category</label>
+      <div class="field"><label>Category</label>
         <select id="categoryFilter">
-          <option value="">Any</option>
-          <option value="dal">Dal</option>
-          <option value="sabzi">Sabzi</option>
-          <option value="pasta">Pasta</option>
-          <option value="noodles">Noodles</option>
-          <option value="wrap">Wraps</option>
-          <option value="burger">Burger</option>
-          <option value="sandwich">Sandwich</option>
-          <option value="salad">Salad</option>
-          <option value="rice">Rice</option>
-          <option value="breakfast">Breakfast</option>
+          <option value="">Any</option><option value="dal">Dal</option><option value="sabzi">Sabzi</option>
+          <option value="pasta">Pasta</option><option value="noodles">Noodles</option>
+          <option value="wrap">Wraps</option><option value="burger">Burger</option>
+          <option value="sandwich">Sandwich</option><option value="salad">Salad</option>
+          <option value="rice">Rice</option><option value="breakfast">Breakfast</option>
+          <option value="baking">Baking</option>
         </select>
       </div>
-      <div class="field">
-        <label>People</label>
-        <select id="peopleCount">
-          <option value="2">2</option>
-          <option value="3" selected>3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
+      <div class="field"><label>People</label>
+        <select id="peopleCount"><option value="2">2</option><option value="3" selected>3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select>
       </div>
       <button class="btn btn-primary" onclick="getSuggestions()" id="suggestBtn">Suggest →</button>
     </div>
@@ -173,36 +193,63 @@ select option { background: #1a1d27; }
   <div id="suggestionsArea"></div>
 </div>
 
+<!-- WEEK PLAN -->
+<div class="page" id="page-week">
+  <div class="sh">
+    <span class="sh-title">Weekly Meal Plan</span>
+    <div class="row" style="gap:8px">
+      <select id="weekPeople"><option value="2">2 people</option><option value="3" selected>3 people</option><option value="4">4 people</option></select>
+      <button class="btn btn-ghost" onclick="loadWeekPlan()">↻ Load Saved</button>
+      <button class="btn btn-primary" id="genWeekBtn" onclick="generateWeek()">✨ Auto-Generate Week</button>
+    </div>
+  </div>
+  <p style="font-size:12px;color:var(--muted);margin-bottom:14px">Click any meal slot to change it.</p>
+  <div id="weekArea"><div class="loading">Click "Auto-Generate Week" to create a plan.</div></div>
+</div>
+
 <!-- TODAY -->
 <div class="page" id="page-today">
-  <div class="section-header">
-    <span class="section-title">Today's Meal Plan</span>
-    <button class="btn btn-ghost" onclick="loadToday()">↻ Refresh</button>
-  </div>
+  <div class="sh"><span class="sh-title">Today's Meals</span><button class="btn btn-ghost" onclick="loadToday()">↻ Refresh</button></div>
   <div id="todayArea"><div class="loading">Loading…</div></div>
+</div>
+
+<!-- RECIPES -->
+<div class="page" id="page-recipes">
+  <div class="recipe-filter">
+    <input type="text" id="recipeSearch" placeholder="Search recipes…" oninput="filterRecipes()" />
+    <select id="recipeCatFilter" onchange="filterRecipes()">
+      <option value="">All Categories</option>
+      <option value="dal">Dal</option><option value="sabzi">Sabzi</option>
+      <option value="pasta">Pasta</option><option value="noodles">Noodles</option>
+      <option value="wrap">Wrap</option><option value="burger">Burger</option>
+      <option value="sandwich">Sandwich</option><option value="salad">Salad</option>
+      <option value="rice">Rice</option><option value="bread">Bread</option>
+      <option value="breakfast">Breakfast</option><option value="side">Side</option>
+      <option value="baking">Baking</option>
+    </select>
+    <span id="recipeCount" style="font-size:12px;color:var(--muted)"></span>
+  </div>
+  <div class="grid" id="recipesGrid"><div class="loading">Loading…</div></div>
 </div>
 
 <!-- INVENTORY -->
 <div class="page" id="page-inventory">
-  <div class="section-header">
-    <span class="section-title">Pantry</span>
-    <div style="display:flex;gap:8px">
+  <div class="sh">
+    <span class="sh-title">Pantry</span>
+    <div class="row" style="gap:8px">
       <button class="btn btn-ghost" onclick="loadInventory()">↻ Refresh</button>
       <button class="btn btn-primary" onclick="openAddModal()">+ Add Item</button>
     </div>
   </div>
-  <div class="stats-row" id="invStats"></div>
+  <div class="stats" id="invStats"></div>
   <div id="inventoryArea"><div class="loading">Loading…</div></div>
 </div>
 
 <!-- SHOPPING -->
 <div class="page" id="page-shopping">
-  <div class="section-header">
-    <span class="section-title">Shopping List</span>
-    <button class="btn btn-ghost" onclick="loadShopping()">↻ Refresh</button>
-  </div>
+  <div class="sh"><span class="sh-title">Shopping List</span><button class="btn btn-ghost" onclick="loadShopping()">↻ Refresh</button></div>
   <div id="shoppingArea"><div class="loading">Loading…</div></div>
-  <div id="shoppingActions" style="margin-top:16px;display:none">
+  <div id="shoppingActions" style="margin-top:14px;display:none">
     <button class="btn btn-primary" onclick="confirmOrder()">✓ Confirm Order — update stock</button>
   </div>
 </div>
@@ -211,47 +258,48 @@ select option { background: #1a1d27; }
 <div class="modal-overlay" id="addModal">
   <div class="modal">
     <h3>Add Inventory Item</h3>
-    <div class="modal-fields">
-      <div class="modal-field">
-        <label>Item Name</label>
-        <input type="text" id="newItemName" placeholder="e.g. lettuce or pasta_sauce" />
+    <div class="mf">
+      <div><label>Item Name</label><input type="text" id="newItemName" placeholder="e.g. lettuce or pasta_sauce" /></div>
+      <div><label>Category</label>
+        <select id="newItemCategory"><option value="vegetables">Vegetables</option><option value="pantry">Pantry / Western</option><option value="baking">Baking</option><option value="staples">Staples</option><option value="dairy">Dairy</option></select>
       </div>
-      <div class="modal-field">
-        <label>Category</label>
-        <select id="newItemCategory">
-          <option value="vegetables">Vegetables</option>
-          <option value="pantry">Pantry / Western</option>
-          <option value="staples">Staples</option>
-          <option value="dairy">Dairy</option>
-        </select>
+      <div><label>Current Quantity</label><input type="text" id="newItemQty" placeholder="0" /></div>
+      <div><label>Unit</label>
+        <select id="newItemUnit"><option value="grams">grams</option><option value="ml">ml</option><option value="pieces">pieces</option><option value="slices">slices</option></select>
       </div>
-      <div class="modal-field">
-        <label>Current Quantity</label>
-        <input type="text" id="newItemQty" placeholder="0" />
-      </div>
-      <div class="modal-field">
-        <label>Unit</label>
-        <select id="newItemUnit">
-          <option value="grams">grams</option>
-          <option value="ml">ml</option>
-          <option value="pieces">pieces</option>
-          <option value="slices">slices</option>
-        </select>
-      </div>
-      <div class="modal-field">
-        <label>Reorder Threshold</label>
-        <input type="text" id="newItemThreshold" placeholder="100" />
-      </div>
+      <div><label>Reorder Threshold</label><input type="text" id="newItemThreshold" placeholder="100" /></div>
     </div>
-    <div class="modal-actions">
+    <div class="modal-acts">
       <button class="btn btn-ghost" onclick="closeAddModal()">Cancel</button>
       <button class="btn btn-primary" onclick="submitAddItem()">Add</button>
     </div>
   </div>
 </div>
 
+<!-- EDIT WEEK SLOT MODAL -->
+<div class="modal-overlay" id="weekEditModal">
+  <div class="modal">
+    <h3 id="weekEditTitle">Change meal</h3>
+    <div class="mf">
+      <div><label>Search Recipe</label><input type="text" id="weekEditSearch" oninput="filterWeekRecipes()" placeholder="type to search…" /></div>
+      <div><label>Or pick from list</label>
+        <select id="weekEditSelect" size="8" style="height:200px;overflow-y:auto"></select>
+      </div>
+    </div>
+    <div class="modal-acts">
+      <button class="btn btn-ghost" onclick="closeWeekModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="saveWeekSlot()">Save</button>
+    </div>
+  </div>
+</div>
+
 <script>
+const DAYS = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+const MEALS = ["breakfast","lunch","dinner"];
+
+let allRecipes = [];
 let currentShoppingItems = [];
+let weekEditContext = {};
 
 document.getElementById('todayDate').textContent = new Date().toLocaleDateString('en-IN', {
   weekday: 'long', day: 'numeric', month: 'long'
@@ -265,6 +313,8 @@ function showTab(name, el) {
   if (name === 'today') loadToday();
   if (name === 'inventory') loadInventory();
   if (name === 'shopping') loadShopping();
+  if (name === 'recipes') loadRecipes();
+  if (name === 'week') loadWeekPlan();
 }
 
 // ── SUGGEST ──────────────────────────────────────────────────────────────
@@ -273,79 +323,193 @@ async function getSuggestions() {
   const prompt = document.getElementById('promptInput').value || 'suggest something good';
   const mealType = document.getElementById('mealType').value;
   const people = parseInt(document.getElementById('peopleCount').value);
-  const category = document.getElementById('categoryFilter').value;
+  const cat = document.getElementById('categoryFilter').value;
   const btn = document.getElementById('suggestBtn');
-
-  const fullPrompt = category ? `${prompt} [prefer category: ${category}]` : prompt;
+  const fullPrompt = cat ? `${prompt} [prefer category: ${cat}]` : prompt;
 
   btn.disabled = true; btn.textContent = 'Thinking…';
   document.getElementById('suggestionsArea').innerHTML = '<div class="loading">AI is checking your pantry…</div>';
 
   try {
     const res = await fetch('/api/suggest', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
+      method: 'POST', headers: {'Content-Type':'application/json'},
       body: JSON.stringify({prompt: fullPrompt, meal_type: mealType, people, recent_meals: []})
     });
     const data = await res.json();
     renderSuggestions(data.suggestions, people, mealType);
   } catch(e) {
-    document.getElementById('suggestionsArea').innerHTML = '<div class="empty">Server not running? cd maid-assistant && uvicorn api.main:app --port 8080</div>';
+    document.getElementById('suggestionsArea').innerHTML = '<div class="empty">Server offline? Run: uvicorn api.main:app --port 8080</div>';
   }
-
   btn.disabled = false; btn.textContent = 'Suggest →';
 }
 
+function catTag(cat) {
+  const baking = cat === 'baking';
+  return `<span class="tag${baking?' tag-baking':''}">${cat}</span>`;
+}
+
 function renderSuggestions(suggestions, people, mealType) {
-  if (!suggestions || !suggestions.length) {
-    document.getElementById('suggestionsArea').innerHTML = '<div class="empty">No results. Try different prompt or category.</div>';
+  if (!suggestions?.length) {
+    document.getElementById('suggestionsArea').innerHTML = '<div class="empty">No results — try a different prompt.</div>';
     return;
   }
   const cards = suggestions.map(s => {
     const av = s.availability;
-    const badgeCls = `badge-${av.status}`;
-    const badgeLabel = av.status === 'ready' ? '✓ Ready' : av.status === 'low' ? '⚠ Low stock' : '✗ Missing';
-    const missingHtml = av.missing.map(m =>
-      `<div class="issue missing">✗ ${m.name.replace(/_/g,' ')}: need ${m.needed}g, have ${m.have}g</div>`
-    ).join('');
-    const lowHtml = av.low.map(l =>
-      `<div class="issue low">⚠ ${l.name.replace(/_/g,' ')}: only ${l.have}g left</div>`
-    ).join('');
-    return `
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-name">${s.name}</div>
-            <div class="card-meta"><span class="tag">${s.category}</span> · ${s.cook_time || 20} min</div>
-          </div>
-          <span class="badge ${badgeCls}">${badgeLabel}</span>
+    const bl = av.status==='ready'?'✓ Ready':av.status==='low'?'⚠ Low':'✗ Missing';
+    const misses = av.missing.map(m=>`<div class="issue missing">✗ ${m.name.replace(/_/g,' ')}: need ${m.needed}g, have ${m.have}g</div>`).join('');
+    const lows = av.low.map(l=>`<div class="issue low">⚠ ${l.name.replace(/_/g,' ')}: ${l.have}g left</div>`).join('');
+    return `<div class="recipe-card">
+      <div class="card-top">
+        <div>
+          <div class="card-name">${s.name}</div>
+          <div class="card-sub">${catTag(s.category)} · ${s.cook_time||20} min</div>
         </div>
-        ${s.reason ? `<div class="card-reason">${s.reason}</div>` : ''}
-        ${s.pair_with ? `<div class="card-pair">Pair with: ${s.pair_with}</div>` : ''}
-        ${missingHtml || lowHtml ? `<div class="issues">${missingHtml}${lowHtml}</div>` : ''}
-        <div style="margin-top:12px">
-          <button class="btn btn-primary btn-sm" onclick="confirmMeal('${s.id}','${mealType}',${people})">Add to today</button>
-        </div>
-      </div>`;
+        <span class="badge badge-${av.status}">${bl}</span>
+      </div>
+      ${s.reason?`<div class="card-text">${s.reason}</div>`:''}
+      ${s.pair_with?`<div class="card-accent">Pair: ${s.pair_with}</div>`:''}
+      ${misses||lows?`<div class="issues">${misses}${lows}</div>`:''}
+      <div style="margin-top:10px"><button class="btn btn-primary btn-sm" onclick="confirmMeal('${s.id}','${mealType}',${people})">Add to today</button></div>
+    </div>`;
   }).join('');
 
   document.getElementById('suggestionsArea').innerHTML = `
-    <div class="section-header"><span class="section-title">${suggestions.length} suggestions · ${mealType} · ${people} people</span></div>
-    <div class="grid-4">${cards}</div>`;
+    <div class="sh"><span class="sh-title">${suggestions.length} suggestions · ${mealType} · ${people} people</span></div>
+    <div class="grid">${cards}</div>`;
 }
 
 async function confirmMeal(recipeId, mealType, people) {
   const res = await fetch('/api/plan/confirm', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
+    method:'POST', headers:{'Content-Type':'application/json'},
     body: JSON.stringify({recipe_id: recipeId, meal_type: mealType, people})
   });
   const data = await res.json();
   if (data.confirmed) {
     const n = data.low_stock.length;
-    alert(`✓ ${data.recipe} added!\n${n > 0 ? `⚠ ${n} items now low — check Shopping tab.` : 'Pantry looks good.'}`);
+    alert(`✓ ${data.recipe} added!\n${n>0?`⚠ ${n} items now low — check Shopping tab.`:'Pantry looks good.'}`);
   }
 }
+
+// ── WEEK PLAN ────────────────────────────────────────────────────────────
+
+async function loadWeekPlan() {
+  const res = await fetch('/api/plan/week');
+  const data = await res.json();
+  if (!data.has_plan) {
+    document.getElementById('weekArea').innerHTML = '<div class="empty">No plan yet. Click "Auto-Generate Week" to create one.</div>';
+    return;
+  }
+  renderWeekGrid(data.plan);
+}
+
+async function generateWeek() {
+  const btn = document.getElementById('genWeekBtn');
+  const people = parseInt(document.getElementById('weekPeople').value);
+  btn.disabled = true; btn.textContent = '✨ Generating…';
+  document.getElementById('weekArea').innerHTML = '<div class="loading">AI is planning your week… (this takes ~10 seconds)</div>';
+
+  try {
+    const res = await fetch('/api/plan/week/generate', {
+      method: 'POST', headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({people})
+    });
+    const data = await res.json();
+    renderWeekGrid(data.plan);
+  } catch(e) {
+    document.getElementById('weekArea').innerHTML = '<div class="empty">Error generating plan.</div>';
+  }
+  btn.disabled = false; btn.textContent = '✨ Auto-Generate Week';
+}
+
+function todayDayName() {
+  return new Date().toLocaleDateString('en-US', {weekday: 'long'});
+}
+
+function renderWeekGrid(plan) {
+  const today = todayDayName();
+  let html = `<div class="week-grid">
+    <div class="week-header"></div>
+    ${DAYS.map(d => `<div class="week-header${d===today?' today-col':''}">${d.slice(0,3)}</div>`).join('')}`;
+
+  for (const mealType of MEALS) {
+    html += `<div class="meal-label">${mealType}</div>`;
+    for (const day of DAYS) {
+      const meal = plan[day]?.[mealType];
+      const statusCls = meal?.availability || 'unknown';
+      const todayCls = day === today ? ' today-col' : '';
+      if (meal?.recipe_name) {
+        const cat = meal.category || '';
+        html += `<div class="week-cell${todayCls}" onclick="openWeekEdit('${day}','${mealType}')">
+          <div class="cell-status ${statusCls}"></div>
+          <div class="cell-name">${meal.recipe_name}</div>
+          ${cat ? `<div class="cell-cat">${cat}</div>` : ''}
+        </div>`;
+      } else {
+        html += `<div class="week-cell${todayCls}" onclick="openWeekEdit('${day}','${mealType}')">
+          <div class="cell-empty">+ Add</div>
+        </div>`;
+      }
+    }
+  }
+  html += '</div>';
+
+  html += `<div style="margin-top:12px;font-size:11px;color:var(--muted);display:flex;gap:14px;align-items:center">
+    <span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-right:4px"></span>Ready</span>
+    <span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--yellow);margin-right:4px"></span>Low stock</span>
+    <span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--red);margin-right:4px"></span>Missing items</span>
+  </div>`;
+
+  document.getElementById('weekArea').innerHTML = html;
+}
+
+async function openWeekEdit(day, mealType) {
+  weekEditContext = {day, mealType};
+  document.getElementById('weekEditTitle').textContent = `${day} — ${mealType}`;
+
+  if (!allRecipes.length) {
+    const res = await fetch('/api/recipes');
+    const data = await res.json();
+    allRecipes = data.recipes;
+  }
+
+  populateWeekSelect(allRecipes);
+  document.getElementById('weekEditSearch').value = '';
+  document.getElementById('weekEditModal').classList.add('open');
+}
+
+function filterWeekRecipes() {
+  const q = document.getElementById('weekEditSearch').value.toLowerCase();
+  const filtered = q ? allRecipes.filter(r => r.name.toLowerCase().includes(q) || r.category.includes(q)) : allRecipes;
+  populateWeekSelect(filtered);
+}
+
+function populateWeekSelect(recipes) {
+  const sel = document.getElementById('weekEditSelect');
+  sel.innerHTML = recipes.map(r => `<option value="${r.id}" data-name="${r.name}">${r.name} (${r.category})</option>`).join('');
+}
+
+function closeWeekModal() {
+  document.getElementById('weekEditModal').classList.remove('open');
+}
+
+async function saveWeekSlot() {
+  const sel = document.getElementById('weekEditSelect');
+  if (!sel.value) { closeWeekModal(); return; }
+  const recipeName = sel.options[sel.selectedIndex].getAttribute('data-name');
+  const {day, mealType} = weekEditContext;
+
+  await fetch('/api/plan/week/update', {
+    method: 'POST', headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({day_name: day, meal_type: mealType, recipe_name: recipeName, recipe_id: sel.value})
+  });
+
+  closeWeekModal();
+  loadWeekPlan();
+}
+
+document.getElementById('weekEditModal').addEventListener('click', function(e) {
+  if (e.target === this) closeWeekModal();
+});
 
 // ── TODAY ────────────────────────────────────────────────────────────────
 
@@ -354,15 +518,59 @@ async function loadToday() {
   const res = await fetch('/api/plan/today');
   const data = await res.json();
   if (!data.meals.length) {
-    document.getElementById('todayArea').innerHTML = '<div class="empty">No meals planned yet. Go to Suggest Meals.</div>';
+    document.getElementById('todayArea').innerHTML = '<div class="empty">No meals confirmed yet today. Go to Suggest or Week Plan.</div>';
     return;
   }
   document.getElementById('todayArea').innerHTML = data.meals.map(m => `
     <div class="meal-row">
-      <span class="meal-type-label">${m.meal_type}</span>
+      <span class="meal-lbl">${m.meal_type}</span>
       <span class="meal-name">${m.name}</span>
-      <span class="meal-people">${m.people} people</span>
+      <span class="meal-ppl">${m.people} people</span>
     </div>`).join('');
+}
+
+// ── RECIPES BROWSE ───────────────────────────────────────────────────────
+
+async function loadRecipes() {
+  if (allRecipes.length) { renderRecipeGrid(allRecipes); return; }
+  const res = await fetch('/api/recipes');
+  const data = await res.json();
+  allRecipes = data.recipes;
+  renderRecipeGrid(allRecipes);
+}
+
+function filterRecipes() {
+  const q = document.getElementById('recipeSearch').value.toLowerCase();
+  const cat = document.getElementById('recipeCatFilter').value;
+  const filtered = allRecipes.filter(r =>
+    (!q || r.name.toLowerCase().includes(q)) &&
+    (!cat || r.category === cat)
+  );
+  renderRecipeGrid(filtered);
+}
+
+function renderRecipeGrid(recipes) {
+  document.getElementById('recipeCount').textContent = `${recipes.length} recipes`;
+  if (!recipes.length) {
+    document.getElementById('recipesGrid').innerHTML = '<div class="empty">No recipes found.</div>';
+    return;
+  }
+  document.getElementById('recipesGrid').innerHTML = recipes.map(r => {
+    const av = r.availability || {};
+    const missingNames = new Set((av.missing||[]).map(m=>m.name));
+    const lowNames = new Set((av.low||[]).map(l=>l.name));
+    const bl = av.status==='ready'?'✓ Ready':av.status==='low'?'⚠ Low':'✗ Missing';
+    const badgeCls = `badge-${av.status||'unknown'}`;
+    return `<div class="recipe-card">
+      <div class="card-top">
+        <div>
+          <div class="card-name">${r.name}</div>
+          <div class="card-sub">${catTag(r.category)} · ${r.cook_time||20} min</div>
+        </div>
+        <span class="badge ${badgeCls}">${bl}</span>
+      </div>
+    </div>`;
+  }).join('');
 }
 
 // ── INVENTORY ────────────────────────────────────────────────────────────
@@ -372,9 +580,9 @@ async function loadInventory() {
   const data = await res.json();
 
   document.getElementById('invStats').innerHTML = `
-    <div class="stat"><div class="stat-val green">${data.items.length}</div><div class="stat-lbl">Total Items</div></div>
-    <div class="stat"><div class="stat-val yellow">${data.low_count}</div><div class="stat-lbl">Low Stock</div></div>
-    <div class="stat"><div class="stat-val red">${data.out_count}</div><div class="stat-lbl">Out of Stock</div></div>`;
+    <div class="stat"><div class="stat-v green">${data.items.length}</div><div class="stat-l">Total Items</div></div>
+    <div class="stat"><div class="stat-v yellow">${data.low_count}</div><div class="stat-l">Low Stock</div></div>
+    <div class="stat"><div class="stat-v red">${data.out_count}</div><div class="stat-l">Out of Stock</div></div>`;
 
   const byCategory = {};
   data.items.forEach(item => {
@@ -383,41 +591,36 @@ async function loadInventory() {
     byCategory[cat].push(item);
   });
 
-  const catOrder = ['vegetables', 'dairy', 'pantry', 'staples'];
-  const orderedCats = [
-    ...catOrder.filter(c => byCategory[c]),
-    ...Object.keys(byCategory).filter(c => !catOrder.includes(c))
-  ];
+  const catOrder = ['vegetables', 'dairy', 'pantry', 'baking', 'staples'];
+  const orderedCats = [...catOrder.filter(c => byCategory[c]), ...Object.keys(byCategory).filter(c => !catOrder.includes(c))];
 
   document.getElementById('inventoryArea').innerHTML = orderedCats.map(cat => `
-    <div class="inv-section">
+    <div class="inv-sec">
       <h3>${cat} (${byCategory[cat].length})</h3>
       <div class="inv-grid">
         ${byCategory[cat].map(item => {
           const cls = item.quantity === 0 ? 'out' : item.quantity <= item.threshold ? 'low' : '';
-          const displayName = item.item_name.replace(/_/g, ' ');
-          const displayQty = item.quantity > 0 ? `${item.quantity}${item.unit}` : 'OUT';
-          const key = item.item_name;
-          return `
-            <div class="inv-item ${cls}" id="row-${key}">
-              <span class="inv-name" title="${displayName}">${displayName}</span>
-              <span class="qty-display" id="qty-${key}">${displayQty}</span>
-              <div class="inv-actions">
-                <button class="btn-icon" onclick="startEdit('${key}',${item.quantity},'${item.unit}')" title="Edit quantity">✏</button>
-                <button class="btn-icon del" onclick="deleteItem('${key}','${displayName}')" title="Remove">✕</button>
-              </div>
-            </div>`;
+          const dn = item.item_name.replace(/_/g,' ');
+          const dq = item.quantity > 0 ? `${item.quantity}${item.unit}` : 'OUT';
+          const k = item.item_name;
+          return `<div class="inv-item ${cls}" id="row-${k}">
+            <span class="inv-n" title="${dn}">${dn}</span>
+            <span class="inv-q" id="qty-${k}">${dq}</span>
+            <div class="inv-acts">
+              <button class="btn-icon" onclick="startEdit('${k}',${item.quantity},'${item.unit}')" title="Edit">✏</button>
+              <button class="btn-icon del" onclick="deleteItem('${k}','${dn}')" title="Remove">✕</button>
+            </div>
+          </div>`;
         }).join('')}
       </div>
     </div>`).join('');
 }
 
-function startEdit(key, currentQty, unit) {
-  const qtyEl = document.getElementById(`qty-${key}`);
-  if (!qtyEl) return;
-  qtyEl.outerHTML = `
-    <input class="edit-input" id="ei-${key}" type="number" value="${currentQty}" min="0" step="50"
-      onkeydown="if(event.key==='Enter')saveEdit('${key}','${unit}');if(event.key==='Escape')loadInventory();" />
+function startEdit(key, qty, unit) {
+  const el = document.getElementById(`qty-${key}`);
+  if (!el) return;
+  el.outerHTML = `<input class="edit-inp" id="ei-${key}" type="number" value="${qty}" min="0" step="50"
+    onkeydown="if(event.key==='Enter')saveEdit('${key}','${unit}');if(event.key==='Escape')loadInventory();" />
     <button class="btn-icon" onclick="saveEdit('${key}','${unit}')" title="Save">✓</button>`;
   const inp = document.getElementById(`ei-${key}`);
   if (inp) { inp.focus(); inp.select(); }
@@ -426,18 +629,16 @@ function startEdit(key, currentQty, unit) {
 async function saveEdit(key, unit) {
   const inp = document.getElementById(`ei-${key}`);
   if (!inp) return;
-  const newQty = parseFloat(inp.value) || 0;
   await fetch('/api/inventory/update', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({item_name: key, quantity: newQty, operation: 'set'})
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({item_name: key, quantity: parseFloat(inp.value)||0, operation:'set'})
   });
   loadInventory();
 }
 
-async function deleteItem(key, displayName) {
-  if (!confirm(`Remove "${displayName}" from inventory?`)) return;
-  await fetch(`/api/inventory/${encodeURIComponent(key)}`, {method: 'DELETE'});
+async function deleteItem(key, name) {
+  if (!confirm(`Remove "${name}" from inventory?`)) return;
+  await fetch(`/api/inventory/${encodeURIComponent(key)}`, {method:'DELETE'});
   loadInventory();
 }
 
@@ -448,34 +649,26 @@ function openAddModal() {
 
 function closeAddModal() {
   document.getElementById('addModal').classList.remove('open');
-  document.getElementById('newItemName').value = '';
-  document.getElementById('newItemQty').value = '';
-  document.getElementById('newItemThreshold').value = '';
+  ['newItemName','newItemQty','newItemThreshold'].forEach(id => document.getElementById(id).value = '');
 }
 
 async function submitAddItem() {
   const name = document.getElementById('newItemName').value.trim();
   if (!name) { alert('Item name required'); return; }
-  const qty = parseFloat(document.getElementById('newItemQty').value) || 0;
-  const threshold = parseFloat(document.getElementById('newItemThreshold').value) || 100;
+  const qty = parseFloat(document.getElementById('newItemQty').value)||0;
+  const threshold = parseFloat(document.getElementById('newItemThreshold').value)||100;
   const category = document.getElementById('newItemCategory').value;
   const unit = document.getElementById('newItemUnit').value;
-
   const res = await fetch('/api/inventory/add', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
+    method:'POST', headers:{'Content-Type':'application/json'},
     body: JSON.stringify({item_name: name, category, quantity: qty, unit, threshold})
   });
-
   if (res.status === 409) { alert('Item already exists'); return; }
-  if (!res.ok) { alert('Error adding item'); return; }
   closeAddModal();
   loadInventory();
 }
 
-document.getElementById('addModal').addEventListener('click', function(e) {
-  if (e.target === this) closeAddModal();
-});
+document.getElementById('addModal').addEventListener('click', function(e) { if (e.target===this) closeAddModal(); });
 
 // ── SHOPPING ─────────────────────────────────────────────────────────────
 
@@ -492,24 +685,20 @@ async function loadShopping() {
   }
 
   document.getElementById('shoppingArea').innerHTML = `
-    <div style="font-size:13px;color:var(--muted);margin-bottom:12px">${data.total_items} items to restock</div>
+    <div style="font-size:12px;color:var(--muted);margin-bottom:10px">${data.total_items} items to restock</div>
     ${data.items.map(item => `
       <div class="shop-row">
-        <div>
-          <div class="shop-name">${item.name.replace(/_/g,' ')}</div>
-          <div class="shop-detail">Have ${item.current}${item.unit} · threshold ${item.threshold}${item.unit}</div>
-        </div>
-        <div class="shop-qty">Order ${item.order_qty}${item.unit}</div>
+        <div><div class="shop-n">${item.name.replace(/_/g,' ')}</div><div class="shop-d">Have ${item.current}${item.unit} · threshold ${item.threshold}${item.unit}</div></div>
+        <div class="shop-q">Order ${item.order_qty}${item.unit}</div>
       </div>`).join('')}`;
   document.getElementById('shoppingActions').style.display = 'block';
 }
 
 async function confirmOrder() {
   if (!currentShoppingItems.length) return;
-  if (!confirm(`Confirm order for ${currentShoppingItems.length} items? Quantities will be added to inventory.`)) return;
+  if (!confirm(`Confirm order for ${currentShoppingItems.length} items?`)) return;
   const res = await fetch('/api/shopping/confirm', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
+    method:'POST', headers:{'Content-Type':'application/json'},
     body: JSON.stringify({items: currentShoppingItems})
   });
   const data = await res.json();

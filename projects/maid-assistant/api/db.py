@@ -80,6 +80,16 @@ def init_db():
                 estimated_used  REAL NOT NULL,
                 source          TEXT DEFAULT 'recipe_deduction'
             );
+
+            CREATE TABLE IF NOT EXISTS week_plans (
+                id          INTEGER PRIMARY KEY AUTOINCREMENT,
+                week_key    TEXT NOT NULL,
+                day_name    TEXT NOT NULL,
+                meal_type   TEXT NOT NULL,
+                recipe_id   TEXT,
+                recipe_name TEXT,
+                UNIQUE(week_key, day_name, meal_type)
+            );
         """)
 
 
@@ -116,7 +126,7 @@ def seed_inventory():
         with open(inv_path) as f:
             data = json.load(f)
 
-        for section in ["staples", "vegetables", "dairy", "pantry"]:
+        for section in ["staples", "vegetables", "dairy", "pantry", "baking"]:
             for name, info in data.get(section, {}).items():
                 conn.execute(
                     "INSERT OR IGNORE INTO inventory (item_name, category, quantity, unit, threshold) VALUES (?,?,?,?,?)",
