@@ -116,7 +116,7 @@ def seed_inventory():
         with open(inv_path) as f:
             data = json.load(f)
 
-        for section in ["staples", "vegetables", "dairy"]:
+        for section in ["staples", "vegetables", "dairy", "pantry"]:
             for name, info in data.get(section, {}).items():
                 conn.execute(
                     "INSERT OR IGNORE INTO inventory (item_name, category, quantity, unit, threshold) VALUES (?,?,?,?,?)",

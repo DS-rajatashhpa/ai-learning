@@ -13,18 +13,66 @@
       "frequency": "daily",
       "cook_time_minutes": 30,
       "ingredients": [
-        {"name": "toor_dal", "quantity": 300, "unit": "grams"},
-        {"name": "tomato", "quantity": 200, "unit": "grams"},
-        {"name": "onion", "quantity": 150, "unit": "grams"},
-        {"name": "garlic", "quantity": 20, "unit": "grams"},
-        {"name": "ginger", "quantity": 15, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 20, "unit": "grams"},
-        {"name": "ghee", "quantity": 30, "unit": "ml"},
-        {"name": "cumin_seeds", "quantity": 5, "unit": "grams"},
-        {"name": "turmeric", "quantity": 3, "unit": "grams"},
-        {"name": "red_chilli_powder", "quantity": 5, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "toor_dal",
+          "quantity": 300,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "garlic",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "ginger",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "ghee",
+          "quantity": 30,
+          "unit": "ml"
+        },
+        {
+          "name": "cumin_seeds",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "red_chilli_powder",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -34,17 +82,61 @@
       "frequency": "weekly",
       "cook_time_minutes": 60,
       "ingredients": [
-        {"name": "black_urad_dal", "quantity": 250, "unit": "grams"},
-        {"name": "rajma", "quantity": 50, "unit": "grams"},
-        {"name": "tomato", "quantity": 300, "unit": "grams"},
-        {"name": "onion", "quantity": 150, "unit": "grams"},
-        {"name": "butter", "quantity": 50, "unit": "grams"},
-        {"name": "cream", "quantity": 50, "unit": "ml"},
-        {"name": "garlic", "quantity": 20, "unit": "grams"},
-        {"name": "ginger", "quantity": 15, "unit": "grams"},
-        {"name": "cumin_seeds", "quantity": 5, "unit": "grams"},
-        {"name": "garam_masala", "quantity": 5, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "black_urad_dal",
+          "quantity": 250,
+          "unit": "grams"
+        },
+        {
+          "name": "rajma",
+          "quantity": 50,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 300,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "butter",
+          "quantity": 50,
+          "unit": "grams"
+        },
+        {
+          "name": "cream",
+          "quantity": 50,
+          "unit": "ml"
+        },
+        {
+          "name": "garlic",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "ginger",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "cumin_seeds",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "garam_masala",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -54,16 +146,56 @@
       "frequency": "weekly",
       "cook_time_minutes": 35,
       "ingredients": [
-        {"name": "toor_dal", "quantity": 250, "unit": "grams"},
-        {"name": "methi_leaves", "quantity": 150, "unit": "grams"},
-        {"name": "tomato", "quantity": 150, "unit": "grams"},
-        {"name": "onion", "quantity": 100, "unit": "grams"},
-        {"name": "garlic", "quantity": 15, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 15, "unit": "grams"},
-        {"name": "ghee", "quantity": 20, "unit": "ml"},
-        {"name": "turmeric", "quantity": 3, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "toor_dal",
+          "quantity": 250,
+          "unit": "grams"
+        },
+        {
+          "name": "methi_leaves",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "garlic",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "ghee",
+          "quantity": 20,
+          "unit": "ml"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -73,16 +205,56 @@
       "frequency": "weekly",
       "cook_time_minutes": 30,
       "ingredients": [
-        {"name": "moong_dal", "quantity": 250, "unit": "grams"},
-        {"name": "spinach", "quantity": 200, "unit": "grams"},
-        {"name": "tomato", "quantity": 150, "unit": "grams"},
-        {"name": "onion", "quantity": 100, "unit": "grams"},
-        {"name": "garlic", "quantity": 15, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 15, "unit": "grams"},
-        {"name": "ghee", "quantity": 20, "unit": "ml"},
-        {"name": "turmeric", "quantity": 3, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "moong_dal",
+          "quantity": 250,
+          "unit": "grams"
+        },
+        {
+          "name": "spinach",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "garlic",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "ghee",
+          "quantity": 20,
+          "unit": "ml"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -92,14 +264,46 @@
       "frequency": "weekly",
       "cook_time_minutes": 25,
       "ingredients": [
-        {"name": "moong_dal", "quantity": 300, "unit": "grams"},
-        {"name": "tomato", "quantity": 150, "unit": "grams"},
-        {"name": "onion", "quantity": 100, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 15, "unit": "grams"},
-        {"name": "ghee", "quantity": 20, "unit": "ml"},
-        {"name": "turmeric", "quantity": 3, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "moong_dal",
+          "quantity": 300,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "ghee",
+          "quantity": 20,
+          "unit": "ml"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -109,15 +313,51 @@
       "frequency": "weekly",
       "cook_time_minutes": 25,
       "ingredients": [
-        {"name": "masoor_dal", "quantity": 300, "unit": "grams"},
-        {"name": "tomato", "quantity": 200, "unit": "grams"},
-        {"name": "onion", "quantity": 150, "unit": "grams"},
-        {"name": "garlic", "quantity": 15, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 15, "unit": "grams"},
-        {"name": "oil", "quantity": 30, "unit": "ml"},
-        {"name": "turmeric", "quantity": 3, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "masoor_dal",
+          "quantity": 300,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "garlic",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 30,
+          "unit": "ml"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -127,16 +367,56 @@
       "frequency": "weekly",
       "cook_time_minutes": 40,
       "ingredients": [
-        {"name": "chana_dal", "quantity": 300, "unit": "grams"},
-        {"name": "tomato", "quantity": 200, "unit": "grams"},
-        {"name": "onion", "quantity": 150, "unit": "grams"},
-        {"name": "garlic", "quantity": 15, "unit": "grams"},
-        {"name": "ginger", "quantity": 10, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 15, "unit": "grams"},
-        {"name": "ghee", "quantity": 25, "unit": "ml"},
-        {"name": "garam_masala", "quantity": 5, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "chana_dal",
+          "quantity": 300,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "garlic",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "ginger",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "ghee",
+          "quantity": 25,
+          "unit": "ml"
+        },
+        {
+          "name": "garam_masala",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -146,16 +426,56 @@
       "frequency": "weekly",
       "cook_time_minutes": 60,
       "ingredients": [
-        {"name": "rajma", "quantity": 350, "unit": "grams"},
-        {"name": "tomato", "quantity": 300, "unit": "grams"},
-        {"name": "onion", "quantity": 200, "unit": "grams"},
-        {"name": "garlic", "quantity": 20, "unit": "grams"},
-        {"name": "ginger", "quantity": 15, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 20, "unit": "grams"},
-        {"name": "oil", "quantity": 40, "unit": "ml"},
-        {"name": "garam_masala", "quantity": 5, "unit": "grams"},
-        {"name": "salt", "quantity": 12, "unit": "grams"}
+        {
+          "name": "rajma",
+          "quantity": 350,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 300,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "garlic",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "ginger",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 40,
+          "unit": "ml"
+        },
+        {
+          "name": "garam_masala",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 12,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -165,16 +485,56 @@
       "frequency": "weekly",
       "cook_time_minutes": 50,
       "ingredients": [
-        {"name": "kabuli_chana", "quantity": 350, "unit": "grams"},
-        {"name": "tomato", "quantity": 300, "unit": "grams"},
-        {"name": "onion", "quantity": 200, "unit": "grams"},
-        {"name": "garlic", "quantity": 20, "unit": "grams"},
-        {"name": "ginger", "quantity": 15, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 20, "unit": "grams"},
-        {"name": "oil", "quantity": 40, "unit": "ml"},
-        {"name": "chole_masala", "quantity": 20, "unit": "grams"},
-        {"name": "salt", "quantity": 12, "unit": "grams"}
+        {
+          "name": "kabuli_chana",
+          "quantity": 350,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 300,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "garlic",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "ginger",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 40,
+          "unit": "ml"
+        },
+        {
+          "name": "chole_masala",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 12,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -184,15 +544,51 @@
       "frequency": "weekly",
       "cook_time_minutes": 45,
       "ingredients": [
-        {"name": "curd", "quantity": 400, "unit": "grams"},
-        {"name": "besan", "quantity": 150, "unit": "grams"},
-        {"name": "onion", "quantity": 150, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 15, "unit": "grams"},
-        {"name": "oil", "quantity": 50, "unit": "ml"},
-        {"name": "turmeric", "quantity": 5, "unit": "grams"},
-        {"name": "red_chilli_powder", "quantity": 5, "unit": "grams"},
-        {"name": "salt", "quantity": 12, "unit": "grams"}
+        {
+          "name": "curd",
+          "quantity": 400,
+          "unit": "grams"
+        },
+        {
+          "name": "besan",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 50,
+          "unit": "ml"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "red_chilli_powder",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 12,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -202,17 +598,61 @@
       "frequency": "weekly",
       "cook_time_minutes": 30,
       "ingredients": [
-        {"name": "potato", "quantity": 400, "unit": "grams"},
-        {"name": "cauliflower", "quantity": 500, "unit": "grams"},
-        {"name": "tomato", "quantity": 200, "unit": "grams"},
-        {"name": "onion", "quantity": 150, "unit": "grams"},
-        {"name": "garlic", "quantity": 15, "unit": "grams"},
-        {"name": "ginger", "quantity": 10, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 20, "unit": "grams"},
-        {"name": "oil", "quantity": 40, "unit": "ml"},
-        {"name": "turmeric", "quantity": 3, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "potato",
+          "quantity": 400,
+          "unit": "grams"
+        },
+        {
+          "name": "cauliflower",
+          "quantity": 500,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "garlic",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "ginger",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 40,
+          "unit": "ml"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -222,15 +662,51 @@
       "frequency": "weekly",
       "cook_time_minutes": 40,
       "ingredients": [
-        {"name": "brinjal", "quantity": 600, "unit": "grams"},
-        {"name": "tomato", "quantity": 200, "unit": "grams"},
-        {"name": "onion", "quantity": 150, "unit": "grams"},
-        {"name": "garlic", "quantity": 15, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 20, "unit": "grams"},
-        {"name": "oil", "quantity": 30, "unit": "ml"},
-        {"name": "turmeric", "quantity": 3, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "brinjal",
+          "quantity": 600,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "garlic",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 30,
+          "unit": "ml"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -240,14 +716,46 @@
       "frequency": "weekly",
       "cook_time_minutes": 35,
       "ingredients": [
-        {"name": "karela", "quantity": 500, "unit": "grams"},
-        {"name": "onion", "quantity": 200, "unit": "grams"},
-        {"name": "tomato", "quantity": 150, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 15, "unit": "grams"},
-        {"name": "oil", "quantity": 40, "unit": "ml"},
-        {"name": "turmeric", "quantity": 3, "unit": "grams"},
-        {"name": "salt", "quantity": 12, "unit": "grams"}
+        {
+          "name": "karela",
+          "quantity": 500,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 40,
+          "unit": "ml"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 12,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -257,17 +765,61 @@
       "frequency": "weekly",
       "cook_time_minutes": 35,
       "ingredients": [
-        {"name": "spinach", "quantity": 500, "unit": "grams"},
-        {"name": "paneer", "quantity": 250, "unit": "grams"},
-        {"name": "tomato", "quantity": 200, "unit": "grams"},
-        {"name": "onion", "quantity": 150, "unit": "grams"},
-        {"name": "garlic", "quantity": 15, "unit": "grams"},
-        {"name": "ginger", "quantity": 10, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "cream", "quantity": 30, "unit": "ml"},
-        {"name": "oil", "quantity": 30, "unit": "ml"},
-        {"name": "garam_masala", "quantity": 5, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "spinach",
+          "quantity": 500,
+          "unit": "grams"
+        },
+        {
+          "name": "paneer",
+          "quantity": 250,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "garlic",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "ginger",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "cream",
+          "quantity": 30,
+          "unit": "ml"
+        },
+        {
+          "name": "oil",
+          "quantity": 30,
+          "unit": "ml"
+        },
+        {
+          "name": "garam_masala",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -277,15 +829,51 @@
       "frequency": "weekly",
       "cook_time_minutes": 30,
       "ingredients": [
-        {"name": "methi_leaves", "quantity": 300, "unit": "grams"},
-        {"name": "potato", "quantity": 400, "unit": "grams"},
-        {"name": "tomato", "quantity": 100, "unit": "grams"},
-        {"name": "onion", "quantity": 100, "unit": "grams"},
-        {"name": "garlic", "quantity": 10, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "oil", "quantity": 35, "unit": "ml"},
-        {"name": "turmeric", "quantity": 3, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "methi_leaves",
+          "quantity": 300,
+          "unit": "grams"
+        },
+        {
+          "name": "potato",
+          "quantity": 400,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "garlic",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 35,
+          "unit": "ml"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -295,15 +883,51 @@
       "frequency": "weekly",
       "cook_time_minutes": 25,
       "ingredients": [
-        {"name": "bhindi", "quantity": 500, "unit": "grams"},
-        {"name": "tomato", "quantity": 200, "unit": "grams"},
-        {"name": "onion", "quantity": 150, "unit": "grams"},
-        {"name": "garlic", "quantity": 10, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 15, "unit": "grams"},
-        {"name": "oil", "quantity": 40, "unit": "ml"},
-        {"name": "turmeric", "quantity": 3, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "bhindi",
+          "quantity": 500,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "garlic",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 40,
+          "unit": "ml"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -313,15 +937,51 @@
       "frequency": "weekly",
       "cook_time_minutes": 25,
       "ingredients": [
-        {"name": "capsicum", "quantity": 400, "unit": "grams"},
-        {"name": "potato", "quantity": 300, "unit": "grams"},
-        {"name": "tomato", "quantity": 150, "unit": "grams"},
-        {"name": "onion", "quantity": 100, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 15, "unit": "grams"},
-        {"name": "oil", "quantity": 35, "unit": "ml"},
-        {"name": "turmeric", "quantity": 3, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "capsicum",
+          "quantity": 400,
+          "unit": "grams"
+        },
+        {
+          "name": "potato",
+          "quantity": 300,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 35,
+          "unit": "ml"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -331,14 +991,46 @@
       "frequency": "weekly",
       "cook_time_minutes": 25,
       "ingredients": [
-        {"name": "lauki", "quantity": 600, "unit": "grams"},
-        {"name": "tomato", "quantity": 150, "unit": "grams"},
-        {"name": "onion", "quantity": 100, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 15, "unit": "grams"},
-        {"name": "oil", "quantity": 25, "unit": "ml"},
-        {"name": "turmeric", "quantity": 3, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "lauki",
+          "quantity": 600,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 25,
+          "unit": "ml"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -348,14 +1040,46 @@
       "frequency": "weekly",
       "cook_time_minutes": 25,
       "ingredients": [
-        {"name": "toori", "quantity": 600, "unit": "grams"},
-        {"name": "tomato", "quantity": 150, "unit": "grams"},
-        {"name": "onion", "quantity": 100, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 15, "unit": "grams"},
-        {"name": "oil", "quantity": 25, "unit": "ml"},
-        {"name": "turmeric", "quantity": 3, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "toori",
+          "quantity": 600,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 25,
+          "unit": "ml"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -365,13 +1089,41 @@
       "frequency": "weekly",
       "cook_time_minutes": 20,
       "ingredients": [
-        {"name": "potato", "quantity": 600, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 20, "unit": "grams"},
-        {"name": "oil", "quantity": 35, "unit": "ml"},
-        {"name": "cumin_seeds", "quantity": 8, "unit": "grams"},
-        {"name": "turmeric", "quantity": 3, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "potato",
+          "quantity": 600,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 35,
+          "unit": "ml"
+        },
+        {
+          "name": "cumin_seeds",
+          "quantity": 8,
+          "unit": "grams"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -381,17 +1133,61 @@
       "frequency": "weekly",
       "cook_time_minutes": 30,
       "ingredients": [
-        {"name": "potato", "quantity": 400, "unit": "grams"},
-        {"name": "green_peas", "quantity": 200, "unit": "grams"},
-        {"name": "tomato", "quantity": 200, "unit": "grams"},
-        {"name": "onion", "quantity": 150, "unit": "grams"},
-        {"name": "garlic", "quantity": 10, "unit": "grams"},
-        {"name": "ginger", "quantity": 10, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 20, "unit": "grams"},
-        {"name": "oil", "quantity": 35, "unit": "ml"},
-        {"name": "turmeric", "quantity": 3, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "potato",
+          "quantity": 400,
+          "unit": "grams"
+        },
+        {
+          "name": "green_peas",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "garlic",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "ginger",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 35,
+          "unit": "ml"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -401,14 +1197,46 @@
       "frequency": "weekly",
       "cook_time_minutes": 20,
       "ingredients": [
-        {"name": "paneer", "quantity": 300, "unit": "grams"},
-        {"name": "tomato", "quantity": 200, "unit": "grams"},
-        {"name": "onion", "quantity": 150, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 20, "unit": "grams"},
-        {"name": "oil", "quantity": 30, "unit": "ml"},
-        {"name": "turmeric", "quantity": 3, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "paneer",
+          "quantity": 300,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 30,
+          "unit": "ml"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -418,16 +1246,56 @@
       "frequency": "weekly",
       "cook_time_minutes": 35,
       "ingredients": [
-        {"name": "paneer", "quantity": 250, "unit": "grams"},
-        {"name": "green_peas", "quantity": 200, "unit": "grams"},
-        {"name": "tomato", "quantity": 250, "unit": "grams"},
-        {"name": "onion", "quantity": 150, "unit": "grams"},
-        {"name": "garlic", "quantity": 15, "unit": "grams"},
-        {"name": "ginger", "quantity": 10, "unit": "grams"},
-        {"name": "cream", "quantity": 30, "unit": "ml"},
-        {"name": "oil", "quantity": 35, "unit": "ml"},
-        {"name": "garam_masala", "quantity": 5, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "paneer",
+          "quantity": 250,
+          "unit": "grams"
+        },
+        {
+          "name": "green_peas",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 250,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "garlic",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "ginger",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "cream",
+          "quantity": 30,
+          "unit": "ml"
+        },
+        {
+          "name": "oil",
+          "quantity": 35,
+          "unit": "ml"
+        },
+        {
+          "name": "garam_masala",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -437,15 +1305,51 @@
       "frequency": "weekly",
       "cook_time_minutes": 30,
       "ingredients": [
-        {"name": "spinach", "quantity": 400, "unit": "grams"},
-        {"name": "potato", "quantity": 300, "unit": "grams"},
-        {"name": "tomato", "quantity": 150, "unit": "grams"},
-        {"name": "onion", "quantity": 100, "unit": "grams"},
-        {"name": "garlic", "quantity": 10, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "oil", "quantity": 30, "unit": "ml"},
-        {"name": "turmeric", "quantity": 3, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "spinach",
+          "quantity": 400,
+          "unit": "grams"
+        },
+        {
+          "name": "potato",
+          "quantity": 300,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "garlic",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 30,
+          "unit": "ml"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -455,17 +1359,61 @@
       "frequency": "weekly",
       "cook_time_minutes": 35,
       "ingredients": [
-        {"name": "potato", "quantity": 200, "unit": "grams"},
-        {"name": "cauliflower", "quantity": 200, "unit": "grams"},
-        {"name": "green_peas", "quantity": 150, "unit": "grams"},
-        {"name": "capsicum", "quantity": 150, "unit": "grams"},
-        {"name": "tomato", "quantity": 200, "unit": "grams"},
-        {"name": "onion", "quantity": 150, "unit": "grams"},
-        {"name": "garlic", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 20, "unit": "grams"},
-        {"name": "oil", "quantity": 40, "unit": "ml"},
-        {"name": "garam_masala", "quantity": 5, "unit": "grams"},
-        {"name": "salt", "quantity": 12, "unit": "grams"}
+        {
+          "name": "potato",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "cauliflower",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "green_peas",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "capsicum",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "garlic",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 40,
+          "unit": "ml"
+        },
+        {
+          "name": "garam_masala",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 12,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -475,13 +1423,41 @@
       "frequency": "weekly",
       "cook_time_minutes": 20,
       "ingredients": [
-        {"name": "cucumber", "quantity": 500, "unit": "grams"},
-        {"name": "tomato", "quantity": 150, "unit": "grams"},
-        {"name": "onion", "quantity": 100, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 15, "unit": "grams"},
-        {"name": "oil", "quantity": 20, "unit": "ml"},
-        {"name": "salt", "quantity": 8, "unit": "grams"}
+        {
+          "name": "cucumber",
+          "quantity": 500,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 20,
+          "unit": "ml"
+        },
+        {
+          "name": "salt",
+          "quantity": 8,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -491,16 +1467,56 @@
       "frequency": "occasional",
       "cook_time_minutes": 60,
       "ingredients": [
-        {"name": "sarson_leaves", "quantity": 600, "unit": "grams"},
-        {"name": "spinach", "quantity": 200, "unit": "grams"},
-        {"name": "tomato", "quantity": 150, "unit": "grams"},
-        {"name": "onion", "quantity": 150, "unit": "grams"},
-        {"name": "garlic", "quantity": 20, "unit": "grams"},
-        {"name": "ginger", "quantity": 15, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "butter", "quantity": 50, "unit": "grams"},
-        {"name": "makki_flour", "quantity": 30, "unit": "grams"},
-        {"name": "salt", "quantity": 12, "unit": "grams"}
+        {
+          "name": "sarson_leaves",
+          "quantity": 600,
+          "unit": "grams"
+        },
+        {
+          "name": "spinach",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "garlic",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "ginger",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "butter",
+          "quantity": 50,
+          "unit": "grams"
+        },
+        {
+          "name": "makki_flour",
+          "quantity": 30,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 12,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -510,9 +1526,21 @@
       "frequency": "daily",
       "cook_time_minutes": 20,
       "ingredients": [
-        {"name": "wheat_flour", "quantity": 600, "unit": "grams"},
-        {"name": "ghee", "quantity": 20, "unit": "ml"},
-        {"name": "salt", "quantity": 5, "unit": "grams"}
+        {
+          "name": "wheat_flour",
+          "quantity": 600,
+          "unit": "grams"
+        },
+        {
+          "name": "ghee",
+          "quantity": 20,
+          "unit": "ml"
+        },
+        {
+          "name": "salt",
+          "quantity": 5,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -522,9 +1550,21 @@
       "frequency": "daily",
       "cook_time_minutes": 25,
       "ingredients": [
-        {"name": "wheat_flour", "quantity": 600, "unit": "grams"},
-        {"name": "ghee", "quantity": 60, "unit": "ml"},
-        {"name": "salt", "quantity": 5, "unit": "grams"}
+        {
+          "name": "wheat_flour",
+          "quantity": 600,
+          "unit": "grams"
+        },
+        {
+          "name": "ghee",
+          "quantity": 60,
+          "unit": "ml"
+        },
+        {
+          "name": "salt",
+          "quantity": 5,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -534,11 +1574,31 @@
       "frequency": "weekly",
       "cook_time_minutes": 30,
       "ingredients": [
-        {"name": "wheat_flour", "quantity": 500, "unit": "grams"},
-        {"name": "methi_leaves", "quantity": 200, "unit": "grams"},
-        {"name": "ghee", "quantity": 60, "unit": "ml"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "salt", "quantity": 8, "unit": "grams"}
+        {
+          "name": "wheat_flour",
+          "quantity": 500,
+          "unit": "grams"
+        },
+        {
+          "name": "methi_leaves",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "ghee",
+          "quantity": 60,
+          "unit": "ml"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 8,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -548,13 +1608,41 @@
       "frequency": "weekly",
       "cook_time_minutes": 35,
       "ingredients": [
-        {"name": "wheat_flour", "quantity": 500, "unit": "grams"},
-        {"name": "potato", "quantity": 400, "unit": "grams"},
-        {"name": "onion", "quantity": 100, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 20, "unit": "grams"},
-        {"name": "ghee", "quantity": 60, "unit": "ml"},
-        {"name": "salt", "quantity": 8, "unit": "grams"}
+        {
+          "name": "wheat_flour",
+          "quantity": 500,
+          "unit": "grams"
+        },
+        {
+          "name": "potato",
+          "quantity": 400,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "ghee",
+          "quantity": 60,
+          "unit": "ml"
+        },
+        {
+          "name": "salt",
+          "quantity": 8,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -564,12 +1652,36 @@
       "frequency": "weekly",
       "cook_time_minutes": 35,
       "ingredients": [
-        {"name": "wheat_flour", "quantity": 500, "unit": "grams"},
-        {"name": "cauliflower", "quantity": 400, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 20, "unit": "grams"},
-        {"name": "ghee", "quantity": 60, "unit": "ml"},
-        {"name": "salt", "quantity": 8, "unit": "grams"}
+        {
+          "name": "wheat_flour",
+          "quantity": 500,
+          "unit": "grams"
+        },
+        {
+          "name": "cauliflower",
+          "quantity": 400,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "ghee",
+          "quantity": 60,
+          "unit": "ml"
+        },
+        {
+          "name": "salt",
+          "quantity": 8,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -579,9 +1691,21 @@
       "frequency": "occasional",
       "cook_time_minutes": 30,
       "ingredients": [
-        {"name": "wheat_flour", "quantity": 500, "unit": "grams"},
-        {"name": "oil", "quantity": 500, "unit": "ml"},
-        {"name": "salt", "quantity": 5, "unit": "grams"}
+        {
+          "name": "wheat_flour",
+          "quantity": 500,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 500,
+          "unit": "ml"
+        },
+        {
+          "name": "salt",
+          "quantity": 5,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -591,9 +1715,21 @@
       "frequency": "occasional",
       "cook_time_minutes": 30,
       "ingredients": [
-        {"name": "makki_flour", "quantity": 500, "unit": "grams"},
-        {"name": "ghee", "quantity": 40, "unit": "ml"},
-        {"name": "salt", "quantity": 5, "unit": "grams"}
+        {
+          "name": "makki_flour",
+          "quantity": 500,
+          "unit": "grams"
+        },
+        {
+          "name": "ghee",
+          "quantity": 40,
+          "unit": "ml"
+        },
+        {
+          "name": "salt",
+          "quantity": 5,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -603,8 +1739,16 @@
       "frequency": "daily",
       "cook_time_minutes": 20,
       "ingredients": [
-        {"name": "basmati_rice", "quantity": 500, "unit": "grams"},
-        {"name": "salt", "quantity": 5, "unit": "grams"}
+        {
+          "name": "basmati_rice",
+          "quantity": 500,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 5,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -614,10 +1758,26 @@
       "frequency": "weekly",
       "cook_time_minutes": 25,
       "ingredients": [
-        {"name": "basmati_rice", "quantity": 500, "unit": "grams"},
-        {"name": "cumin_seeds", "quantity": 8, "unit": "grams"},
-        {"name": "ghee", "quantity": 20, "unit": "ml"},
-        {"name": "salt", "quantity": 8, "unit": "grams"}
+        {
+          "name": "basmati_rice",
+          "quantity": 500,
+          "unit": "grams"
+        },
+        {
+          "name": "cumin_seeds",
+          "quantity": 8,
+          "unit": "grams"
+        },
+        {
+          "name": "ghee",
+          "quantity": 20,
+          "unit": "ml"
+        },
+        {
+          "name": "salt",
+          "quantity": 8,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -627,14 +1787,46 @@
       "frequency": "weekly",
       "cook_time_minutes": 30,
       "ingredients": [
-        {"name": "basmati_rice", "quantity": 300, "unit": "grams"},
-        {"name": "moong_dal", "quantity": 200, "unit": "grams"},
-        {"name": "tomato", "quantity": 150, "unit": "grams"},
-        {"name": "onion", "quantity": 100, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "ghee", "quantity": 30, "unit": "ml"},
-        {"name": "turmeric", "quantity": 3, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "basmati_rice",
+          "quantity": 300,
+          "unit": "grams"
+        },
+        {
+          "name": "moong_dal",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "ghee",
+          "quantity": 30,
+          "unit": "ml"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -644,14 +1836,46 @@
       "frequency": "weekly",
       "cook_time_minutes": 35,
       "ingredients": [
-        {"name": "basmati_rice", "quantity": 500, "unit": "grams"},
-        {"name": "green_peas", "quantity": 150, "unit": "grams"},
-        {"name": "carrot", "quantity": 100, "unit": "grams"},
-        {"name": "onion", "quantity": 150, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "ghee", "quantity": 30, "unit": "ml"},
-        {"name": "garam_masala", "quantity": 5, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "basmati_rice",
+          "quantity": 500,
+          "unit": "grams"
+        },
+        {
+          "name": "green_peas",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "carrot",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "ghee",
+          "quantity": 30,
+          "unit": "ml"
+        },
+        {
+          "name": "garam_masala",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -661,12 +1885,36 @@
       "frequency": "daily",
       "cook_time_minutes": 5,
       "ingredients": [
-        {"name": "curd", "quantity": 500, "unit": "grams"},
-        {"name": "boondi", "quantity": 50, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 5, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 10, "unit": "grams"},
-        {"name": "cumin_powder", "quantity": 3, "unit": "grams"},
-        {"name": "salt", "quantity": 5, "unit": "grams"}
+        {
+          "name": "curd",
+          "quantity": 500,
+          "unit": "grams"
+        },
+        {
+          "name": "boondi",
+          "quantity": 50,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "cumin_powder",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 5,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -676,13 +1924,41 @@
       "frequency": "weekly",
       "cook_time_minutes": 5,
       "ingredients": [
-        {"name": "curd", "quantity": 400, "unit": "grams"},
-        {"name": "cucumber", "quantity": 200, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 5, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 10, "unit": "grams"},
-        {"name": "mint_leaves", "quantity": 10, "unit": "grams"},
-        {"name": "cumin_powder", "quantity": 3, "unit": "grams"},
-        {"name": "salt", "quantity": 5, "unit": "grams"}
+        {
+          "name": "curd",
+          "quantity": 400,
+          "unit": "grams"
+        },
+        {
+          "name": "cucumber",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "mint_leaves",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "cumin_powder",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 5,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -692,13 +1968,41 @@
       "frequency": "daily",
       "cook_time_minutes": 5,
       "ingredients": [
-        {"name": "cucumber", "quantity": 200, "unit": "grams"},
-        {"name": "tomato", "quantity": 150, "unit": "grams"},
-        {"name": "onion", "quantity": 100, "unit": "grams"},
-        {"name": "lemon", "quantity": 30, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 5, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 15, "unit": "grams"},
-        {"name": "salt", "quantity": 5, "unit": "grams"}
+        {
+          "name": "cucumber",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "lemon",
+          "quantity": 30,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 5,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -708,12 +2012,36 @@
       "frequency": "daily",
       "cook_time_minutes": 5,
       "ingredients": [
-        {"name": "coriander_leaves", "quantity": 100, "unit": "grams"},
-        {"name": "mint_leaves", "quantity": 30, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 15, "unit": "grams"},
-        {"name": "garlic", "quantity": 10, "unit": "grams"},
-        {"name": "lemon", "quantity": 20, "unit": "grams"},
-        {"name": "salt", "quantity": 5, "unit": "grams"}
+        {
+          "name": "coriander_leaves",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "mint_leaves",
+          "quantity": 30,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "garlic",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "lemon",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 5,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -723,16 +2051,56 @@
       "frequency": "weekly",
       "cook_time_minutes": 15,
       "ingredients": [
-        {"name": "poha", "quantity": 500, "unit": "grams"},
-        {"name": "onion", "quantity": 200, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 15, "unit": "grams"},
-        {"name": "potato", "quantity": 150, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 20, "unit": "grams"},
-        {"name": "oil", "quantity": 40, "unit": "ml"},
-        {"name": "mustard_seeds", "quantity": 5, "unit": "grams"},
-        {"name": "turmeric", "quantity": 3, "unit": "grams"},
-        {"name": "lemon", "quantity": 20, "unit": "grams"},
-        {"name": "salt", "quantity": 8, "unit": "grams"}
+        {
+          "name": "poha",
+          "quantity": 500,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "potato",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 40,
+          "unit": "ml"
+        },
+        {
+          "name": "mustard_seeds",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "lemon",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 8,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -742,14 +2110,46 @@
       "frequency": "weekly",
       "cook_time_minutes": 20,
       "ingredients": [
-        {"name": "suji", "quantity": 400, "unit": "grams"},
-        {"name": "onion", "quantity": 150, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "tomato", "quantity": 100, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 15, "unit": "grams"},
-        {"name": "oil", "quantity": 40, "unit": "ml"},
-        {"name": "mustard_seeds", "quantity": 5, "unit": "grams"},
-        {"name": "salt", "quantity": 8, "unit": "grams"}
+        {
+          "name": "suji",
+          "quantity": 400,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 40,
+          "unit": "ml"
+        },
+        {
+          "name": "mustard_seeds",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 8,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -759,14 +2159,46 @@
       "frequency": "weekly",
       "cook_time_minutes": 40,
       "ingredients": [
-        {"name": "potato", "quantity": 600, "unit": "grams"},
-        {"name": "tomato", "quantity": 200, "unit": "grams"},
-        {"name": "onion", "quantity": 150, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 20, "unit": "grams"},
-        {"name": "wheat_flour", "quantity": 400, "unit": "grams"},
-        {"name": "oil", "quantity": 500, "unit": "ml"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "potato",
+          "quantity": 600,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "wheat_flour",
+          "quantity": 400,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 500,
+          "unit": "ml"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -776,17 +2208,61 @@
       "frequency": "weekly",
       "cook_time_minutes": 35,
       "ingredients": [
-        {"name": "toor_dal", "quantity": 100, "unit": "grams"},
-        {"name": "moong_dal", "quantity": 100, "unit": "grams"},
-        {"name": "masoor_dal", "quantity": 100, "unit": "grams"},
-        {"name": "tomato", "quantity": 200, "unit": "grams"},
-        {"name": "onion", "quantity": 150, "unit": "grams"},
-        {"name": "garlic", "quantity": 15, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 20, "unit": "grams"},
-        {"name": "ghee", "quantity": 30, "unit": "ml"},
-        {"name": "turmeric", "quantity": 3, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "toor_dal",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "moong_dal",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "masoor_dal",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "garlic",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "ghee",
+          "quantity": 30,
+          "unit": "ml"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -796,15 +2272,51 @@
       "frequency": "weekly",
       "cook_time_minutes": 25,
       "ingredients": [
-        {"name": "carrot", "quantity": 400, "unit": "grams"},
-        {"name": "green_peas", "quantity": 200, "unit": "grams"},
-        {"name": "tomato", "quantity": 150, "unit": "grams"},
-        {"name": "onion", "quantity": 100, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 15, "unit": "grams"},
-        {"name": "oil", "quantity": 30, "unit": "ml"},
-        {"name": "turmeric", "quantity": 3, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "carrot",
+          "quantity": 400,
+          "unit": "grams"
+        },
+        {
+          "name": "green_peas",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 30,
+          "unit": "ml"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -814,15 +2326,51 @@
       "frequency": "weekly",
       "cook_time_minutes": 25,
       "ingredients": [
-        {"name": "sem_beans", "quantity": 500, "unit": "grams"},
-        {"name": "tomato", "quantity": 150, "unit": "grams"},
-        {"name": "onion", "quantity": 100, "unit": "grams"},
-        {"name": "garlic", "quantity": 10, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "coriander_leaves", "quantity": 15, "unit": "grams"},
-        {"name": "oil", "quantity": 30, "unit": "ml"},
-        {"name": "turmeric", "quantity": 3, "unit": "grams"},
-        {"name": "salt", "quantity": 10, "unit": "grams"}
+        {
+          "name": "sem_beans",
+          "quantity": 500,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "garlic",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 30,
+          "unit": "ml"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 10,
+          "unit": "grams"
+        }
       ]
     },
     {
@@ -832,14 +2380,1284 @@
       "frequency": "weekly",
       "cook_time_minutes": 20,
       "ingredients": [
-        {"name": "spinach", "quantity": 600, "unit": "grams"},
-        {"name": "tomato", "quantity": 150, "unit": "grams"},
-        {"name": "onion", "quantity": 100, "unit": "grams"},
-        {"name": "garlic", "quantity": 10, "unit": "grams"},
-        {"name": "green_chilli", "quantity": 10, "unit": "grams"},
-        {"name": "oil", "quantity": 25, "unit": "ml"},
-        {"name": "turmeric", "quantity": 3, "unit": "grams"},
-        {"name": "salt", "quantity": 8, "unit": "grams"}
+        {
+          "name": "spinach",
+          "quantity": 600,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "garlic",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 25,
+          "unit": "ml"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 8,
+          "unit": "grams"
+        }
+      ]
+    },
+    {
+      "id": "tomato_arrabbiata_pasta",
+      "name": "Tomato Arrabbiata Pasta",
+      "category": "pasta",
+      "frequency": "weekly",
+      "cook_time_minutes": 20,
+      "ingredients": [
+        {
+          "name": "pasta",
+          "quantity": 300,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 300,
+          "unit": "grams"
+        },
+        {
+          "name": "garlic",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "capsicum",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "red_chilli_powder",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "mixed_herbs",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 30,
+          "unit": "ml"
+        },
+        {
+          "name": "salt",
+          "quantity": 5,
+          "unit": "grams"
+        }
+      ]
+    },
+    {
+      "id": "white_sauce_pasta",
+      "name": "White Sauce Pasta",
+      "category": "pasta",
+      "frequency": "weekly",
+      "cook_time_minutes": 25,
+      "ingredients": [
+        {
+          "name": "pasta",
+          "quantity": 300,
+          "unit": "grams"
+        },
+        {
+          "name": "milk",
+          "quantity": 300,
+          "unit": "ml"
+        },
+        {
+          "name": "butter",
+          "quantity": 30,
+          "unit": "ml"
+        },
+        {
+          "name": "wheat_flour",
+          "quantity": 30,
+          "unit": "grams"
+        },
+        {
+          "name": "capsicum",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "corn",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "cheese",
+          "quantity": 50,
+          "unit": "grams"
+        },
+        {
+          "name": "mixed_herbs",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 5,
+          "unit": "grams"
+        }
+      ]
+    },
+    {
+      "id": "spinach_pesto_pasta",
+      "name": "Spinach Pesto Pasta",
+      "category": "pasta",
+      "frequency": "weekly",
+      "cook_time_minutes": 20,
+      "ingredients": [
+        {
+          "name": "pasta",
+          "quantity": 300,
+          "unit": "grams"
+        },
+        {
+          "name": "spinach",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 30,
+          "unit": "grams"
+        },
+        {
+          "name": "garlic",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "lemon",
+          "quantity": 30,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 40,
+          "unit": "ml"
+        },
+        {
+          "name": "cheese",
+          "quantity": 30,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 5,
+          "unit": "grams"
+        }
+      ]
+    },
+    {
+      "id": "pasta_primavera",
+      "name": "Pasta Primavera",
+      "category": "pasta",
+      "frequency": "weekly",
+      "cook_time_minutes": 25,
+      "ingredients": [
+        {
+          "name": "pasta",
+          "quantity": 300,
+          "unit": "grams"
+        },
+        {
+          "name": "carrot",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "capsicum",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "corn",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "green_peas",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "mixed_herbs",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 30,
+          "unit": "ml"
+        },
+        {
+          "name": "salt",
+          "quantity": 5,
+          "unit": "grams"
+        }
+      ]
+    },
+    {
+      "id": "veg_hakka_noodles",
+      "name": "Veg Hakka Noodles",
+      "category": "noodles",
+      "frequency": "weekly",
+      "cook_time_minutes": 20,
+      "ingredients": [
+        {
+          "name": "noodles",
+          "quantity": 250,
+          "unit": "grams"
+        },
+        {
+          "name": "cabbage",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "carrot",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "capsicum",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "soy_sauce",
+          "quantity": 20,
+          "unit": "ml"
+        },
+        {
+          "name": "vinegar",
+          "quantity": 10,
+          "unit": "ml"
+        },
+        {
+          "name": "chilli_sauce",
+          "quantity": 15,
+          "unit": "ml"
+        },
+        {
+          "name": "oil",
+          "quantity": 30,
+          "unit": "ml"
+        },
+        {
+          "name": "garlic",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 5,
+          "unit": "grams"
+        }
+      ]
+    },
+    {
+      "id": "schezwan_noodles",
+      "name": "Schezwan Noodles",
+      "category": "noodles",
+      "frequency": "weekly",
+      "cook_time_minutes": 20,
+      "ingredients": [
+        {
+          "name": "noodles",
+          "quantity": 250,
+          "unit": "grams"
+        },
+        {
+          "name": "cabbage",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "capsicum",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "carrot",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "chilli_sauce",
+          "quantity": 30,
+          "unit": "ml"
+        },
+        {
+          "name": "soy_sauce",
+          "quantity": 15,
+          "unit": "ml"
+        },
+        {
+          "name": "vinegar",
+          "quantity": 10,
+          "unit": "ml"
+        },
+        {
+          "name": "garlic",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 30,
+          "unit": "ml"
+        },
+        {
+          "name": "salt",
+          "quantity": 5,
+          "unit": "grams"
+        }
+      ]
+    },
+    {
+      "id": "paneer_tikka_wrap",
+      "name": "Paneer Tikka Wrap",
+      "category": "wrap",
+      "frequency": "weekly",
+      "cook_time_minutes": 25,
+      "ingredients": [
+        {
+          "name": "wheat_flour",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "paneer",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "curd",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "capsicum",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "mint_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "lemon",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "red_chilli_powder",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "garam_masala",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 20,
+          "unit": "ml"
+        },
+        {
+          "name": "ketchup",
+          "quantity": 30,
+          "unit": "grams"
+        }
+      ]
+    },
+    {
+      "id": "aloo_tikki_wrap",
+      "name": "Aloo Tikki Wrap",
+      "category": "wrap",
+      "frequency": "weekly",
+      "cook_time_minutes": 25,
+      "ingredients": [
+        {
+          "name": "wheat_flour",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "potato",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "green_peas",
+          "quantity": 50,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "mint_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "lemon",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "cumin_seeds",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "garam_masala",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 20,
+          "unit": "ml"
+        },
+        {
+          "name": "ketchup",
+          "quantity": 30,
+          "unit": "grams"
+        }
+      ]
+    },
+    {
+      "id": "mixed_veg_wrap",
+      "name": "Mixed Veg Wrap",
+      "category": "wrap",
+      "frequency": "weekly",
+      "cook_time_minutes": 20,
+      "ingredients": [
+        {
+          "name": "wheat_flour",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "capsicum",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "carrot",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "cabbage",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "cucumber",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "lemon",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "mayonnaise",
+          "quantity": 30,
+          "unit": "grams"
+        },
+        {
+          "name": "ketchup",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 15,
+          "unit": "ml"
+        }
+      ]
+    },
+    {
+      "id": "aloo_tikki_burger",
+      "name": "Aloo Tikki Burger",
+      "category": "burger",
+      "frequency": "weekly",
+      "cook_time_minutes": 30,
+      "ingredients": [
+        {
+          "name": "burger_buns",
+          "quantity": 3,
+          "unit": "pieces"
+        },
+        {
+          "name": "potato",
+          "quantity": 250,
+          "unit": "grams"
+        },
+        {
+          "name": "green_peas",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "cabbage",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "cumin_seeds",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "garam_masala",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "ketchup",
+          "quantity": 40,
+          "unit": "grams"
+        },
+        {
+          "name": "mayonnaise",
+          "quantity": 30,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 30,
+          "unit": "ml"
+        }
+      ]
+    },
+    {
+      "id": "paneer_burger",
+      "name": "Paneer Burger",
+      "category": "burger",
+      "frequency": "weekly",
+      "cook_time_minutes": 25,
+      "ingredients": [
+        {
+          "name": "burger_buns",
+          "quantity": 3,
+          "unit": "pieces"
+        },
+        {
+          "name": "paneer",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "curd",
+          "quantity": 50,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "capsicum",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "cabbage",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "ketchup",
+          "quantity": 40,
+          "unit": "grams"
+        },
+        {
+          "name": "mayonnaise",
+          "quantity": 30,
+          "unit": "grams"
+        },
+        {
+          "name": "red_chilli_powder",
+          "quantity": 5,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 20,
+          "unit": "ml"
+        }
+      ]
+    },
+    {
+      "id": "grilled_veggie_sandwich",
+      "name": "Grilled Veggie Sandwich",
+      "category": "sandwich",
+      "frequency": "weekly",
+      "cook_time_minutes": 15,
+      "ingredients": [
+        {
+          "name": "bread",
+          "quantity": 6,
+          "unit": "slices"
+        },
+        {
+          "name": "tomato",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "capsicum",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "cucumber",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "cheese",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "ketchup",
+          "quantity": 30,
+          "unit": "grams"
+        },
+        {
+          "name": "butter",
+          "quantity": 20,
+          "unit": "ml"
+        },
+        {
+          "name": "salt",
+          "quantity": 3,
+          "unit": "grams"
+        }
+      ]
+    },
+    {
+      "id": "paneer_sandwich",
+      "name": "Paneer Sandwich",
+      "category": "sandwich",
+      "frequency": "weekly",
+      "cook_time_minutes": 15,
+      "ingredients": [
+        {
+          "name": "bread",
+          "quantity": 6,
+          "unit": "slices"
+        },
+        {
+          "name": "paneer",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "mint_leaves",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "ketchup",
+          "quantity": 30,
+          "unit": "grams"
+        },
+        {
+          "name": "mayonnaise",
+          "quantity": 25,
+          "unit": "grams"
+        },
+        {
+          "name": "butter",
+          "quantity": 15,
+          "unit": "ml"
+        }
+      ]
+    },
+    {
+      "id": "cucumber_mint_sandwich",
+      "name": "Cucumber Mint Sandwich",
+      "category": "sandwich",
+      "frequency": "weekly",
+      "cook_time_minutes": 10,
+      "ingredients": [
+        {
+          "name": "bread",
+          "quantity": 6,
+          "unit": "slices"
+        },
+        {
+          "name": "cucumber",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "mint_leaves",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "lemon",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "mayonnaise",
+          "quantity": 40,
+          "unit": "grams"
+        },
+        {
+          "name": "butter",
+          "quantity": 15,
+          "unit": "ml"
+        },
+        {
+          "name": "salt",
+          "quantity": 3,
+          "unit": "grams"
+        }
+      ]
+    },
+    {
+      "id": "tossed_garden_salad",
+      "name": "Tossed Garden Salad",
+      "category": "salad",
+      "frequency": "daily",
+      "cook_time_minutes": 10,
+      "ingredients": [
+        {
+          "name": "cucumber",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "carrot",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "cabbage",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "lemon",
+          "quantity": 30,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 3,
+          "unit": "grams"
+        }
+      ]
+    },
+    {
+      "id": "corn_veggie_salad",
+      "name": "Corn Veggie Salad",
+      "category": "salad",
+      "frequency": "weekly",
+      "cook_time_minutes": 10,
+      "ingredients": [
+        {
+          "name": "corn",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "capsicum",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "cucumber",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 50,
+          "unit": "grams"
+        },
+        {
+          "name": "lemon",
+          "quantity": 30,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 3,
+          "unit": "grams"
+        }
+      ]
+    },
+    {
+      "id": "sprouts_salad",
+      "name": "Sprouts Salad",
+      "category": "salad",
+      "frequency": "daily",
+      "cook_time_minutes": 5,
+      "ingredients": [
+        {
+          "name": "sprouts",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "cucumber",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 40,
+          "unit": "grams"
+        },
+        {
+          "name": "lemon",
+          "quantity": 25,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 2,
+          "unit": "grams"
+        },
+        {
+          "name": "cumin_powder",
+          "quantity": 2,
+          "unit": "grams"
+        }
+      ]
+    },
+    {
+      "id": "chickpea_salad",
+      "name": "Chickpea Salad",
+      "category": "salad",
+      "frequency": "weekly",
+      "cook_time_minutes": 15,
+      "ingredients": [
+        {
+          "name": "kabuli_chana",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 100,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "cucumber",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "lemon",
+          "quantity": 30,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "cumin_powder",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 3,
+          "unit": "grams"
+        }
+      ]
+    },
+    {
+      "id": "besan_chila",
+      "name": "Besan Chila",
+      "category": "breakfast",
+      "frequency": "weekly",
+      "cook_time_minutes": 20,
+      "ingredients": [
+        {
+          "name": "besan",
+          "quantity": 250,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 20,
+          "unit": "grams"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "red_chilli_powder",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 4,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 20,
+          "unit": "ml"
+        }
+      ]
+    },
+    {
+      "id": "oats_porridge",
+      "name": "Oats Porridge",
+      "category": "breakfast",
+      "frequency": "daily",
+      "cook_time_minutes": 10,
+      "ingredients": [
+        {
+          "name": "oats",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "milk",
+          "quantity": 300,
+          "unit": "ml"
+        },
+        {
+          "name": "salt",
+          "quantity": 2,
+          "unit": "grams"
+        }
+      ]
+    },
+    {
+      "id": "veg_oats_savory",
+      "name": "Savory Masala Oats",
+      "category": "breakfast",
+      "frequency": "weekly",
+      "cook_time_minutes": 15,
+      "ingredients": [
+        {
+          "name": "oats",
+          "quantity": 150,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "tomato",
+          "quantity": 80,
+          "unit": "grams"
+        },
+        {
+          "name": "green_chilli",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "carrot",
+          "quantity": 50,
+          "unit": "grams"
+        },
+        {
+          "name": "coriander_leaves",
+          "quantity": 15,
+          "unit": "grams"
+        },
+        {
+          "name": "cumin_seeds",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "turmeric",
+          "quantity": 2,
+          "unit": "grams"
+        },
+        {
+          "name": "salt",
+          "quantity": 3,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 10,
+          "unit": "ml"
+        }
+      ]
+    },
+    {
+      "id": "veg_fried_rice",
+      "name": "Veg Fried Rice",
+      "category": "rice",
+      "frequency": "weekly",
+      "cook_time_minutes": 25,
+      "ingredients": [
+        {
+          "name": "basmati_rice",
+          "quantity": 200,
+          "unit": "grams"
+        },
+        {
+          "name": "carrot",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "cabbage",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "capsicum",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "green_peas",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "onion",
+          "quantity": 60,
+          "unit": "grams"
+        },
+        {
+          "name": "soy_sauce",
+          "quantity": 15,
+          "unit": "ml"
+        },
+        {
+          "name": "vinegar",
+          "quantity": 10,
+          "unit": "ml"
+        },
+        {
+          "name": "garlic",
+          "quantity": 10,
+          "unit": "grams"
+        },
+        {
+          "name": "oil",
+          "quantity": 25,
+          "unit": "ml"
+        },
+        {
+          "name": "salt",
+          "quantity": 4,
+          "unit": "grams"
+        }
       ]
     }
   ]

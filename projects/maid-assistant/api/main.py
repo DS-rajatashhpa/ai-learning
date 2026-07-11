@@ -74,6 +74,52 @@ def update_inventory(req: UpdateInventoryRequest):
     return {"item": req.item_name, "new_quantity": new_qty}
 
 
+class AddInventoryRequest(BaseModel):
+    item_name: str
+    category: str
+    quantity: float
+    unit: str = "grams"
+    threshold: float = 100
+
+
+@app.post("/api/inventory/add")
+def add_inventory_item(req: AddInventoryRequest):
+    name = req.item_name.strip().lower().replace(" ", "_")
+    with get_conn() as conn:
+        existing = conn.execute(
+            "SELECT item_name FROM inventory WHERE item_name = ?", (name,)
+        ).fetchone()
+        if existing:
+            raise HTTPException(409, f"Item '{name}' already exists")
+        conn.execute(
+            "INSERT INTO inventory (item_name, category, quantity, unit, threshold) VALUES (?,?,?,?,?)",
+            (name, req.category, req.quantity, req.unit, req.threshold)
+        )
+    return {"item": name, "status": "added"}
+
+
+@app.delete("/api/inventory/{item_name}")
+def delete_inventory_item(item_name: str):
+    with get_conn() as conn:
+        conn.execute("DELETE FROM inventory WHERE item_name = ?", (item_name,))
+    return {"item": item_name, "status": "deleted"}
+
+
+class UpdateThresholdRequest(BaseModel):
+    item_name: str
+    threshold: float
+
+
+@app.post("/api/inventory/threshold")
+def update_threshold(req: UpdateThresholdRequest):
+    with get_conn() as conn:
+        conn.execute(
+            "UPDATE inventory SET threshold = ? WHERE item_name = ?",
+            (req.threshold, req.item_name)
+        )
+    return {"item": req.item_name, "threshold": req.threshold}
+
+
 # --- Meal Suggestions ---
 
 class SuggestRequest(BaseModel):
