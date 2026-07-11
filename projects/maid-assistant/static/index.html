@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maid Assistant</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --border: #2a2d3e;
+    --accent: #4ade80;
+    --accent-dim: #1a3a25;
+    --yellow: #fbbf24;
+    --yellow-dim: #3a2e0a;
+    --red: #f87171;
+    --red-dim: #3a1212;
+    --text: #e2e8f0;
+    --muted: #64748b;
+    --card: #1e2130;
+  }
+
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', -apple-system, sans-serif; min-height: 100vh; }
+
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  header h1 { font-size: 18px; font-weight: 600; color: var(--accent); }
+  header .meta { font-size: 13px; color: var(--muted); }
+
+  .tabs {
+    display: flex;
+    gap: 4px;
+    padding: 16px 24px 0;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .tab {
+    padding: 8px 18px;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--muted);
+    border: 1px solid transparent;
+    border-bottom: none;
+    background: transparent;
+    transition: all 0.15s;
+  }
+
+  .tab.active {
+    background: var(--bg);
+    color: var(--text);
+    border-color: var(--border);
+  }
+
+  .page { display: none; padding: 24px; max-width: 960px; margin: 0 auto; }
+  .page.active { display: block; }
+
+  /* Suggest Page */
+  .suggest-bar {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+
+  .suggest-bar h2 { font-size: 15px; color: var(--muted); margin-bottom: 16px; font-weight: 500; }
+
+  .suggest-controls {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field label { font-size: 12px; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  input[type="text"], select {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.15s;
+  }
+
+  input[type="text"] { width: 320px; }
+  select { min-width: 140px; }
+
+  input[type="text"]:focus, select:focus { border-color: var(--accent); }
+
+  .btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .btn-primary { background: var(--accent); color: #000; }
+  .btn-primary:hover { background: #22c55e; }
+  .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+  .btn-ghost { background: var(--border); color: var(--text); }
+  .btn-ghost:hover { background: var(--border); filter: brightness(1.2); }
+
+  /* Suggestion Cards */
+  .suggestions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  .recipe-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    transition: border 0.15s;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .recipe-card:hover { border-color: var(--accent); }
+  .recipe-card.selected { border-color: var(--accent); background: var(--accent-dim); }
+
+  .card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 10px; gap: 8px; }
+  .card-name { font-size: 16px; font-weight: 600; }
+  .card-category { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 3px; }
+
+  .status-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .status-ready { background: var(--accent-dim); color: var(--accent); }
+  .status-low { background: var(--yellow-dim); color: var(--yellow); }
+  .status-missing { background: var(--red-dim); color: var(--red); }
+
+  .card-reason { font-size: 13px; color: var(--muted); margin-bottom: 12px; line-height: 1.5; }
+  .card-pair { font-size: 12px; color: var(--accent); }
+
+  .ingredient-issues { margin-top: 10px; }
+  .ingredient-issue { font-size: 12px; padding: 4px 0; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+  .ingredient-issue.missing { color: var(--red); }
+  .ingredient-issue.low { color: var(--yellow); }
+  .ingredient-issue::before { content: '•'; }
+
+  .card-footer { margin-top: 14px; display: flex; gap: 8px; }
+
+  /* Today's Plan */
+  .today-grid { display: grid; gap: 12px; }
+
+  .meal-slot {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .meal-slot-type {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-width: 60px;
+  }
+
+  .meal-slot-name { font-size: 15px; font-weight: 500; }
+  .meal-slot-people { font-size: 12px; color: var(--muted); }
+  .empty-slot { color: var(--muted); font-size: 14px; font-style: italic; }
+
+  /* Inventory Page */
+  .inv-section { margin-bottom: 28px; }
+  .inv-section h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 12px; font-weight: 600; }
+
+  .inv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+
+  .inv-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .inv-item.out { border-color: var(--red); background: var(--red-dim); }
+  .inv-item.low { border-color: var(--yellow); background: var(--yellow-dim); }
+
+  .inv-name { font-size: 13px; }
+  .inv-qty { font-size: 12px; color: var(--muted); text-align: right; white-space: nowrap; }
+  .inv-item.out .inv-qty { color: var(--red); }
+  .inv-item.low .inv-qty { color: var(--yellow); }
+
+  /* Shopping */
+  .shopping-list { display: grid; gap: 10px; }
+
+  .shop-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .shop-item-name { font-size: 15px; font-weight: 500; text-transform: capitalize; }
+  .shop-item-detail { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .shop-qty { font-size: 14px; color: var(--accent); font-weight: 600; white-space: nowrap; }
+
+  /* Stats bar */
+  .stats-bar {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 18px;
+    flex: 1;
+    min-width: 100px;
+  }
+
+  .stat-value { font-size: 24px; font-weight: 700; }
+  .stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .stat-value.accent { color: var(--accent); }
+  .stat-value.yellow { color: var(--yellow); }
+  .stat-value.red { color: var(--red); }
+
+  /* Loader */
+  .loading { text-align: center; color: var(--muted); padding: 40px; font-size: 14px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  .section-title { font-size: 16px; font-weight: 600; }
+
+  /* Empty */
+  .empty { text-align: center; color: var(--muted); padding: 48px; font-size: 14px; }
+
+  select option { background: #1a1d27; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🍽 Maid Assistant</h1>
+  <div class="meta" id="todayDate"></div>
+</header>
+
+<div class="tabs">
+  <button class="tab active" onclick="showTab('suggest')">Suggest Meals</button>
+  <button class="tab" onclick="showTab('today')">Today's Plan</button>
+  <button class="tab" onclick="showTab('inventory')">Inventory</button>
+  <button class="tab" onclick="showTab('shopping')">Shopping</button>
+</div>
+
+<!-- SUGGEST PAGE -->
+<div class="page active" id="page-suggest">
+  <div class="suggest-bar">
+    <h2>What do you want to cook?</h2>
+    <div class="suggest-controls">
+      <div class="field">
+        <label>Tell the AI</label>
+        <input type="text" id="promptInput" placeholder="something light, use up methi, no onion today..." />
+      </div>
+      <div class="field">
+        <label>Meal</label>
+        <select id="mealType">
+          <option value="breakfast">Breakfast</option>
+          <option value="lunch" selected>Lunch</option>
+          <option value="dinner">Dinner</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>People</label>
+        <select id="peopleCount">
+          <option value="2">2</option>
+          <option value="3" selected>3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" onclick="getSuggestions()" id="suggestBtn">Suggest →</button>
+    </div>
+  </div>
+
+  <div id="suggestionsArea"></div>
+</div>
+
+<!-- TODAY PAGE -->
+<div class="page" id="page-today">
+  <div class="section-header">
+    <span class="section-title">Today's Meal Plan</span>
+    <button class="btn btn-ghost" onclick="loadToday()">↻ Refresh</button>
+  </div>
+  <div id="todayArea"><div class="loading">Loading...</div></div>
+</div>
+
+<!-- INVENTORY PAGE -->
+<div class="page" id="page-inventory">
+  <div class="section-header">
+    <span class="section-title">Pantry Inventory</span>
+    <button class="btn btn-ghost" onclick="loadInventory()">↻ Refresh</button>
+  </div>
+  <div class="stats-bar" id="invStats"></div>
+  <div id="inventoryArea"><div class="loading">Loading...</div></div>
+</div>
+
+<!-- SHOPPING PAGE -->
+<div class="page" id="page-shopping">
+  <div class="section-header">
+    <span class="section-title">Shopping List</span>
+    <button class="btn btn-ghost" onclick="loadShopping()">↻ Refresh</button>
+  </div>
+  <div id="shoppingArea"><div class="loading">Loading...</div></div>
+  <div id="shoppingActions" style="margin-top:16px; display:none;">
+    <button class="btn btn-primary" onclick="confirmOrder()">Confirm Blinkit Order →</button>
+  </div>
+</div>
+
+<script>
+  let currentSuggestions = [];
+  let currentShoppingItems = [];
+
+  // Tab switching
+  function showTab(name) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    event.target.classList.add('active');
+    document.getElementById('page-' + name).classList.add('active');
+    if (name === 'today') loadToday();
+    if (name === 'inventory') loadInventory();
+    if (name === 'shopping') loadShopping();
+  }
+
+  // Today's date
+  document.getElementById('todayDate').textContent = new Date().toLocaleDateString('en-IN', {
+    weekday: 'long', day: 'numeric', month: 'long'
+  });
+
+  // --- SUGGEST ---
+  async function getSuggestions() {
+    const prompt = document.getElementById('promptInput').value || 'suggest something good';
+    const mealType = document.getElementById('mealType').value;
+    const people = parseInt(document.getElementById('peopleCount').value);
+    const btn = document.getElementById('suggestBtn');
+
+    btn.disabled = true;
+    btn.textContent = 'Thinking...';
+    document.getElementById('suggestionsArea').innerHTML = '<div class="loading">AI is checking inventory and generating suggestions...</div>';
+
+    try {
+      const res = await fetch('/api/suggest', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt, meal_type: mealType, people, recent_meals: [] })
+      });
+      const data = await res.json();
+      currentSuggestions = data.suggestions;
+      renderSuggestions(data.suggestions, people, mealType);
+    } catch (e) {
+      document.getElementById('suggestionsArea').innerHTML = '<div class="empty">Error fetching suggestions. Is the server running?</div>';
+    }
+
+    btn.disabled = false;
+    btn.textContent = 'Suggest →';
+  }
+
+  function renderSuggestions(suggestions, people, mealType) {
+    if (!suggestions.length) {
+      document.getElementById('suggestionsArea').innerHTML = '<div class="empty">No suggestions found. Try a different prompt.</div>';
+      return;
+    }
+
+    const html = `
+      <div class="section-header" style="margin-bottom:16px;">
+        <span class="section-title">${suggestions.length} options for ${mealType} (${people} people)</span>
+      </div>
+      <div class="suggestions-grid">
+        ${suggestions.map((s, i) => renderCard(s, i, people, mealType)).join('')}
+      </div>
+    `;
+    document.getElementById('suggestionsArea').innerHTML = html;
+  }
+
+  function renderCard(recipe, index, people, mealType) {
+    const avail = recipe.availability;
+    const statusClass = `status-${avail.status}`;
+    const statusText = avail.status === 'ready' ? '✓ Ready' : avail.status === 'low' ? '⚠ Low stock' : '✗ Missing items';
+
+    const missingHtml = avail.missing.map(m =>
+      `<div class="ingredient-issue missing">${m.name.replace(/_/g,' ')}: have ${m.have}g, need ${m.needed}g</div>`
+    ).join('');
+
+    const lowHtml = avail.low.map(l =>
+      `<div class="ingredient-issue low">${l.name.replace(/_/g,' ')}: only ${l.have}g left</div>`
+    ).join('');
+
+    return `
+      <div class="recipe-card" id="card-${index}">
+        <div class="card-header">
+          <div>
+            <div class="card-name">${recipe.name}</div>
+            <div class="card-category">${recipe.category} · ${recipe.cook_time || 30} min</div>
+          </div>
+          <span class="status-badge ${statusClass}">${statusText}</span>
+        </div>
+        ${recipe.reason ? `<div class="card-reason">${recipe.reason}</div>` : ''}
+        ${recipe.pair_with ? `<div class="card-pair">Pair with: ${recipe.pair_with}</div>` : ''}
+        ${missingHtml || lowHtml ? `<div class="ingredient-issues">${missingHtml}${lowHtml}</div>` : ''}
+        <div class="card-footer">
+          <button class="btn btn-primary" onclick="confirmMeal('${recipe.id}', '${mealType}', ${people})">
+            Add to Today →
+          </button>
+        </div>
+      </div>
+    `;
+  }
+
+  async function confirmMeal(recipeId, mealType, people) {
+    const res = await fetch('/api/plan/confirm', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ recipe_id: recipeId, meal_type: mealType, people })
+    });
+    const data = await res.json();
+
+    if (data.confirmed) {
+      const lowCount = data.low_stock.length;
+      alert(`✓ ${data.recipe} added to today's plan!\nInventory updated.\n${lowCount > 0 ? `⚠ ${lowCount} items now low — check Shopping tab.` : 'Pantry looks good.'}`);
+    }
+  }
+
+  // --- TODAY ---
+  async function loadToday() {
+    document.getElementById('todayArea').innerHTML = '<div class="loading">Loading...</div>';
+    const res = await fetch('/api/plan/today');
+    const data = await res.json();
+
+    if (!data.meals.length) {
+      document.getElementById('todayArea').innerHTML = `
+        <div class="empty">No meals planned for today yet.<br>Go to "Suggest Meals" to add some.</div>
+      `;
+      return;
+    }
+
+    const html = `
+      <div class="today-grid">
+        ${data.meals.map(m => `
+          <div class="meal-slot">
+            <span class="meal-slot-type">${m.meal_type}</span>
+            <span class="meal-slot-name">${m.name}</span>
+            <span class="meal-slot-people">${m.people} people</span>
+          </div>
+        `).join('')}
+      </div>
+    `;
+    document.getElementById('todayArea').innerHTML = html;
+  }
+
+  // --- INVENTORY ---
+  async function loadInventory() {
+    const res = await fetch('/api/inventory');
+    const data = await res.json();
+
+    document.getElementById('invStats').innerHTML = `
+      <div class="stat"><div class="stat-value accent">${data.items.length}</div><div class="stat-label">Total Items</div></div>
+      <div class="stat"><div class="stat-value yellow">${data.low_count}</div><div class="stat-label">Low Stock</div></div>
+      <div class="stat"><div class="stat-value red">${data.out_count}</div><div class="stat-label">Out of Stock</div></div>
+    `;
+
+    const byCategory = {};
+    data.items.forEach(item => {
+      if (!byCategory[item.category]) byCategory[item.category] = [];
+      byCategory[item.category].push(item);
+    });
+
+    const html = Object.entries(byCategory).map(([cat, items]) => `
+      <div class="inv-section">
+        <h3>${cat}</h3>
+        <div class="inv-grid">
+          ${items.map(item => {
+            const cls = item.quantity === 0 ? 'out' : item.quantity <= item.threshold ? 'low' : '';
+            return `
+              <div class="inv-item ${cls}">
+                <span class="inv-name">${item.item_name.replace(/_/g, ' ')}</span>
+                <span class="inv-qty">${item.quantity > 0 ? item.quantity + item.unit : 'OUT'}</span>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+    `).join('');
+
+    document.getElementById('inventoryArea').innerHTML = html;
+  }
+
+  // --- SHOPPING ---
+  async function loadShopping() {
+    document.getElementById('shoppingArea').innerHTML = '<div class="loading">Loading...</div>';
+    const res = await fetch('/api/shopping/list');
+    const data = await res.json();
+    currentShoppingItems = data.items;
+
+    if (!data.items.length) {
+      document.getElementById('shoppingArea').innerHTML = '<div class="empty">✓ All items are well stocked. Nothing to order.</div>';
+      document.getElementById('shoppingActions').style.display = 'none';
+      return;
+    }
+
+    const html = `
+      <div style="margin-bottom:12px; font-size:13px; color:var(--muted)">${data.total_items} items to order</div>
+      <div class="shopping-list">
+        ${data.items.map(item => `
+          <div class="shop-item">
+            <div>
+              <div class="shop-item-name">${item.name.replace(/_/g,' ')}</div>
+              <div class="shop-item-detail">Current: ${item.current}${item.unit} | Threshold: ${item.threshold}${item.unit}</div>
+            </div>
+            <div class="shop-qty">Order ${item.order_qty}${item.unit}</div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+
+    document.getElementById('shoppingArea').innerHTML = html;
+    document.getElementById('shoppingActions').style.display = 'block';
+  }
+
+  async function confirmOrder() {
+    if (!currentShoppingItems.length) return;
+    const confirmed = confirm(`Confirm Blinkit order for ${currentShoppingItems.length} items?`);
+    if (!confirmed) return;
+
+    const res = await fetch('/api/shopping/confirm', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items: currentShoppingItems })
+    });
+    const data = await res.json();
+    alert(`✓ Order confirmed! ${data.ordered} items ordered. Inventory will be updated on delivery.`);
+    loadShopping();
+  }
+
+  // Auto-load today on start
+  window.addEventListener('load', () => {
+    // Pre-warm suggestions with a default
+  });
+</script>
+</body>
+</html>
