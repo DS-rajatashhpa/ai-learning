@@ -81,6 +81,11 @@ def init_db():
                 source          TEXT DEFAULT 'recipe_deduction'
             );
 
+            CREATE TABLE IF NOT EXISTS recipe_steps (
+                recipe_id   TEXT PRIMARY KEY,
+                steps       TEXT NOT NULL
+            );
+
             CREATE TABLE IF NOT EXISTS week_plans (
                 id          INTEGER PRIMARY KEY AUTOINCREMENT,
                 week_key    TEXT NOT NULL,

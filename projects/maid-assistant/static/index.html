@@ -19,23 +19,21 @@ body { background: var(--bg); color: var(--text); font-family: -apple-system, 'I
 header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; }
 header h1 { font-size: 16px; font-weight: 600; color: var(--accent); }
 .tabs { display: flex; gap: 2px; padding: 12px 24px 0; border-bottom: 1px solid var(--border); background: var(--surface); overflow-x: auto; }
-.tab { padding: 7px 16px; border-radius: 8px 8px 0 0; cursor: pointer; font-size: 13px; color: var(--muted); border: 1px solid transparent; border-bottom: none; background: transparent; white-space: nowrap; }
+.tab { padding: 7px 15px; border-radius: 8px 8px 0 0; cursor: pointer; font-size: 13px; color: var(--muted); border: 1px solid transparent; border-bottom: none; background: transparent; white-space: nowrap; }
 .tab.active { background: var(--bg); color: var(--text); border-color: var(--border); }
-.page { display: none; padding: 20px; max-width: 1040px; margin: 0 auto; }
+.page { display: none; padding: 18px; max-width: 1040px; margin: 0 auto; }
 .page.active { display: block; }
 
-/* Controls */
-.bar { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 18px; }
-.bar h2 { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+.bar { background: var(--surface); border: 1px solid var(--border); border-radius: 11px; padding: 15px; margin-bottom: 16px; }
+.bar h2 { font-size: 13px; color: var(--muted); margin-bottom: 11px; }
 .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-end; }
 .field { display: flex; flex-direction: column; gap: 4px; }
 .field label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 500; }
-input[type="text"], select { background: var(--bg); border: 1px solid var(--border); color: var(--text); border-radius: 7px; padding: 8px 12px; font-size: 13px; outline: none; }
+input[type="text"], select { background: var(--bg); border: 1px solid var(--border); color: var(--text); border-radius: 7px; padding: 8px 11px; font-size: 13px; outline: none; }
 input[type="text"]:focus, select:focus { border-color: var(--accent); }
-input.wide { width: 260px; }
+input.wide { width: 250px; }
 select option { background: #1a1d27; }
 
-/* Buttons */
 .btn { padding: 8px 16px; border-radius: 7px; border: none; font-size: 13px; font-weight: 500; cursor: pointer; }
 .btn-primary { background: var(--accent); color: #000; }
 .btn-primary:hover { background: #22c55e; }
@@ -47,52 +45,46 @@ select option { background: #1a1d27; }
 .btn-icon:hover { background: var(--accent); color: #000; }
 .btn-icon.del:hover { background: var(--red); color: #000; }
 
-/* Cards */
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(255px, 1fr)); gap: 12px; }
-.card { background: var(--card); border: 1px solid var(--border); border-radius: 11px; padding: 15px; }
-.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(248px, 1fr)); gap: 12px; }
+.rcard { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px; cursor: pointer; transition: border 0.12s; }
+.rcard:hover { border-color: var(--accent); }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 7px; }
 .card-name { font-size: 14px; font-weight: 600; }
 .card-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
-.card-text { font-size: 12px; color: var(--muted); margin: 6px 0; line-height: 1.4; }
+.card-text { font-size: 12px; color: var(--muted); margin: 5px 0; line-height: 1.4; }
 .card-accent { font-size: 12px; color: var(--accent); }
 
-/* Badges */
 .badge { padding: 3px 8px; border-radius: 20px; font-size: 11px; font-weight: 600; white-space: nowrap; flex-shrink: 0; }
 .badge-ready { background: var(--accent-dim); color: var(--accent); }
 .badge-low { background: var(--yellow-dim); color: var(--yellow); }
 .badge-missing { background: var(--red-dim); color: var(--red); }
 .badge-unknown { background: var(--border); color: var(--muted); }
 .tag { display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 10px; font-weight: 600; background: var(--blue-dim); color: var(--blue); text-transform: uppercase; letter-spacing: 0.3px; }
-.tag-baking { background: var(--purple-dim); color: var(--purple); }
+.tag.baking { background: var(--purple-dim); color: var(--purple); }
 
-/* Issues */
 .issues { margin-top: 6px; }
 .issue { font-size: 11px; padding: 1px 0; }
 .issue.missing { color: var(--red); }
 .issue.low { color: var(--yellow); }
 
-/* Section header */
 .sh { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
 .sh-title { font-size: 15px; font-weight: 600; }
 
-/* Today */
 .meal-row { background: var(--card); border: 1px solid var(--border); border-radius: 9px; padding: 12px 16px; display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
-.meal-lbl { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; min-width: 58px; }
+.meal-lbl { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; min-width: 62px; }
 .meal-name { font-size: 14px; font-weight: 500; flex: 1; }
-.meal-ppl { font-size: 12px; color: var(--muted); }
+.meal-src { font-size: 11px; color: var(--muted); }
 
-/* Stats */
 .stats { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
 .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 11px 14px; flex: 1; min-width: 80px; }
 .stat-v { font-size: 20px; font-weight: 700; }
 .stat-l { font-size: 11px; color: var(--muted); margin-top: 2px; }
 .green { color: var(--accent); } .yellow { color: var(--yellow); } .red { color: var(--red); }
 
-/* Inventory */
 .inv-sec { margin-bottom: 20px; }
 .inv-sec h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 8px; font-weight: 600; }
-.inv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 7px; }
-.inv-item { background: var(--card); border: 1px solid var(--border); border-radius: 7px; padding: 8px 11px; display: flex; align-items: center; gap: 6px; }
+.inv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(218px, 1fr)); gap: 6px; }
+.inv-item { background: var(--card); border: 1px solid var(--border); border-radius: 7px; padding: 8px 10px; display: flex; align-items: center; gap: 6px; }
 .inv-item.out { border-color: var(--red); background: var(--red-dim); }
 .inv-item.low { border-color: var(--yellow); background: var(--yellow-dim); }
 .inv-n { font-size: 12px; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -100,53 +92,63 @@ select option { background: #1a1d27; }
 .inv-item.out .inv-q { color: var(--red); font-weight: 600; }
 .inv-item.low .inv-q { color: var(--yellow); }
 .inv-acts { display: flex; gap: 3px; flex-shrink: 0; }
-.edit-inp { width: 60px; background: var(--bg); border: 1px solid var(--accent); border-radius: 4px; color: var(--text); padding: 2px 5px; font-size: 11px; text-align: center; outline: none; }
+.edit-inp { width: 58px; background: var(--bg); border: 1px solid var(--accent); border-radius: 4px; color: var(--text); padding: 2px 5px; font-size: 11px; text-align: center; outline: none; }
 
-/* Shopping */
 .shop-row { background: var(--card); border: 1px solid var(--border); border-radius: 9px; padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 7px; }
 .shop-n { font-size: 13px; font-weight: 500; text-transform: capitalize; flex: 1; }
 .shop-d { font-size: 11px; color: var(--muted); margin-top: 1px; }
 .shop-q { font-size: 13px; color: var(--accent); font-weight: 600; white-space: nowrap; }
 
-/* Week Planner */
-.week-grid { display: grid; grid-template-columns: 90px repeat(7, 1fr); gap: 6px; overflow-x: auto; }
-.week-header { font-size: 11px; font-weight: 600; color: var(--muted); text-align: center; padding: 8px 4px; text-transform: uppercase; letter-spacing: 0.4px; }
-.week-header.today-col { color: var(--accent); }
-.meal-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; padding: 8px 4px; display: flex; align-items: center; }
-.week-cell { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; min-height: 60px; cursor: pointer; position: relative; transition: border 0.1s; }
-.week-cell:hover { border-color: var(--accent); }
-.week-cell.today-col { border-color: #3a3d5e; }
-.cell-name { font-size: 12px; font-weight: 500; line-height: 1.3; }
-.cell-cat { font-size: 10px; color: var(--muted); margin-top: 3px; }
-.cell-status { position: absolute; top: 6px; right: 6px; width: 7px; height: 7px; border-radius: 50%; }
-.cell-status.ready { background: var(--accent); }
-.cell-status.low { background: var(--yellow); }
-.cell-status.missing { background: var(--red); }
-.cell-status.unknown { background: var(--muted); }
-.cell-empty { color: var(--muted); font-size: 11px; font-style: italic; }
+/* Week grid */
+.week-wrap { overflow-x: auto; }
+.week-grid { display: grid; grid-template-columns: 80px repeat(7, minmax(110px, 1fr)); gap: 5px; min-width: 700px; }
+.wh { font-size: 11px; font-weight: 600; color: var(--muted); text-align: center; padding: 7px 4px; text-transform: uppercase; letter-spacing: 0.4px; }
+.wh.today { color: var(--accent); }
+.wml { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; padding: 7px 4px; display: flex; align-items: center; }
+.wcell { background: var(--card); border: 1px solid var(--border); border-radius: 7px; padding: 7px 9px; min-height: 55px; cursor: pointer; position: relative; transition: border 0.1s; }
+.wcell:hover { border-color: var(--accent); }
+.wcell.today { border-color: #3a3d5e; }
+.cn { font-size: 11px; font-weight: 500; line-height: 1.3; }
+.cc { font-size: 10px; color: var(--muted); margin-top: 2px; }
+.dot { position: absolute; top: 5px; right: 5px; width: 7px; height: 7px; border-radius: 50%; }
+.dot.ready { background: var(--accent); } .dot.low { background: var(--yellow); } .dot.missing,.dot.unknown { background: var(--muted); }
+.cempty { color: var(--muted); font-size: 11px; font-style: italic; }
 
-/* Recipes browse */
-.recipe-filter { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; align-items: center; }
-.recipe-filter input { width: 220px; }
-.recipe-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px; }
-.ing-list { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 5px; }
-.ing-chip { font-size: 11px; background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 2px 7px; color: var(--muted); }
-.ing-chip.missing { border-color: var(--red); color: var(--red); background: var(--red-dim); }
-.ing-chip.low { border-color: var(--yellow); color: var(--yellow); background: var(--yellow-dim); }
+/* Recipe filter */
+.rfilt { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; align-items: center; }
+.rfilt input { width: 210px; }
+
+/* Ingredient chips in recipe card */
+.ing-list { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 9px; }
+.chip { font-size: 11px; border: 1px solid var(--border); border-radius: 4px; padding: 2px 7px; color: var(--muted); background: var(--surface); }
+.chip.missing { border-color: var(--red); color: var(--red); background: var(--red-dim); }
+.chip.low { border-color: var(--yellow); color: var(--yellow); background: var(--yellow-dim); }
+
+/* Steps list */
+.steps-list { list-style: none; margin-top: 12px; }
+.steps-list li { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px; line-height: 1.5; color: var(--text); }
+.steps-list li:last-child { border-bottom: none; }
+.step-num { font-size: 11px; font-weight: 700; color: var(--accent); min-width: 22px; padding-top: 2px; }
 
 /* Modal */
-.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 100; align-items: center; justify-content: center; }
-.modal-overlay.open { display: flex; }
-.modal { background: var(--surface); border: 1px solid var(--border); border-radius: 13px; padding: 22px; width: 380px; max-width: 95vw; max-height: 90vh; overflow-y: auto; }
-.modal h3 { font-size: 15px; font-weight: 600; margin-bottom: 16px; }
+.overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 100; align-items: center; justify-content: center; padding: 16px; }
+.overlay.open { display: flex; }
+.modal { background: var(--surface); border: 1px solid var(--border); border-radius: 13px; width: 520px; max-width: 100%; max-height: 88vh; overflow-y: auto; }
+.modal-head { padding: 18px 20px 14px; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; position: sticky; top: 0; background: var(--surface); }
+.modal-head h3 { font-size: 16px; font-weight: 600; }
+.modal-body { padding: 18px 20px; }
+.modal-sm { width: 380px; }
 .mf { display: grid; gap: 11px; }
 .mf label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 3px; }
 .mf input, .mf select { width: 100%; background: var(--bg); border: 1px solid var(--border); color: var(--text); border-radius: 7px; padding: 8px 11px; font-size: 13px; outline: none; }
 .mf input:focus { border-color: var(--accent); }
-.modal-acts { display: flex; gap: 8px; margin-top: 18px; justify-content: flex-end; }
+.modal-acts { display: flex; gap: 8px; justify-content: flex-end; margin-top: 16px; }
+.close-btn { background: none; border: none; color: var(--muted); font-size: 20px; cursor: pointer; padding: 0 4px; line-height: 1; }
+.close-btn:hover { color: var(--text); }
 
 .loading { text-align: center; color: var(--muted); padding: 36px; font-size: 13px; }
 .empty { text-align: center; color: var(--muted); padding: 44px; font-size: 13px; }
+.section-lbl { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin: 14px 0 8px; font-weight: 600; }
 </style>
 </head>
 <body>
@@ -178,7 +180,7 @@ select option { background: #1a1d27; }
         <select id="categoryFilter">
           <option value="">Any</option><option value="dal">Dal</option><option value="sabzi">Sabzi</option>
           <option value="pasta">Pasta</option><option value="noodles">Noodles</option>
-          <option value="wrap">Wraps</option><option value="burger">Burger</option>
+          <option value="wrap">Wrap</option><option value="burger">Burger</option>
           <option value="sandwich">Sandwich</option><option value="salad">Salad</option>
           <option value="rice">Rice</option><option value="breakfast">Breakfast</option>
           <option value="baking">Baking</option>
@@ -198,13 +200,13 @@ select option { background: #1a1d27; }
   <div class="sh">
     <span class="sh-title">Weekly Meal Plan</span>
     <div class="row" style="gap:8px">
-      <select id="weekPeople"><option value="2">2 people</option><option value="3" selected>3 people</option><option value="4">4 people</option></select>
-      <button class="btn btn-ghost" onclick="loadWeekPlan()">↻ Load Saved</button>
-      <button class="btn btn-primary" id="genWeekBtn" onclick="generateWeek()">✨ Auto-Generate Week</button>
+      <select id="weekPeople"><option value="2">2</option><option value="3" selected>3</option><option value="4">4</option></select>
+      <button class="btn btn-ghost" onclick="loadWeekPlan()">↻ Refresh</button>
+      <button class="btn btn-primary" id="genWeekBtn" onclick="generateWeek()">✨ Auto-Generate</button>
     </div>
   </div>
-  <p style="font-size:12px;color:var(--muted);margin-bottom:14px">Click any meal slot to change it.</p>
-  <div id="weekArea"><div class="loading">Click "Auto-Generate Week" to create a plan.</div></div>
+  <p style="font-size:12px;color:var(--muted);margin-bottom:12px">Click any cell to swap a meal. Today's column is highlighted.</p>
+  <div id="weekArea"><div class="loading">Click Auto-Generate to plan the week.</div></div>
 </div>
 
 <!-- TODAY -->
@@ -215,8 +217,8 @@ select option { background: #1a1d27; }
 
 <!-- RECIPES -->
 <div class="page" id="page-recipes">
-  <div class="recipe-filter">
-    <input type="text" id="recipeSearch" placeholder="Search recipes…" oninput="filterRecipes()" />
+  <div class="rfilt">
+    <input type="text" id="recipeSearch" placeholder="Search by name…" oninput="filterRecipes()" />
     <select id="recipeCatFilter" onchange="filterRecipes()">
       <option value="">All Categories</option>
       <option value="dal">Dal</option><option value="sabzi">Sabzi</option>
@@ -254,52 +256,75 @@ select option { background: #1a1d27; }
   </div>
 </div>
 
-<!-- ADD ITEM MODAL -->
-<div class="modal-overlay" id="addModal">
+<!-- RECIPE DETAIL MODAL -->
+<div class="overlay" id="recipeModal">
   <div class="modal">
-    <h3>Add Inventory Item</h3>
-    <div class="mf">
-      <div><label>Item Name</label><input type="text" id="newItemName" placeholder="e.g. lettuce or pasta_sauce" /></div>
-      <div><label>Category</label>
-        <select id="newItemCategory"><option value="vegetables">Vegetables</option><option value="pantry">Pantry / Western</option><option value="baking">Baking</option><option value="staples">Staples</option><option value="dairy">Dairy</option></select>
+    <div class="modal-head">
+      <div>
+        <h3 id="rModalName">Recipe</h3>
+        <div style="margin-top:4px" id="rModalMeta"></div>
       </div>
-      <div><label>Current Quantity</label><input type="text" id="newItemQty" placeholder="0" /></div>
-      <div><label>Unit</label>
-        <select id="newItemUnit"><option value="grams">grams</option><option value="ml">ml</option><option value="pieces">pieces</option><option value="slices">slices</option></select>
-      </div>
-      <div><label>Reorder Threshold</label><input type="text" id="newItemThreshold" placeholder="100" /></div>
+      <button class="close-btn" onclick="closeRecipeModal()">×</button>
     </div>
-    <div class="modal-acts">
-      <button class="btn btn-ghost" onclick="closeAddModal()">Cancel</button>
-      <button class="btn btn-primary" onclick="submitAddItem()">Add</button>
+    <div class="modal-body">
+      <div class="section-lbl">Ingredients (for 3 people)</div>
+      <div id="rModalIngredients"></div>
+      <div style="margin-top:14px">
+        <button class="btn btn-ghost btn-sm" id="stepsBtn" onclick="loadSteps()">📋 Get Cooking Steps</button>
+      </div>
+      <div id="rModalSteps"></div>
     </div>
   </div>
 </div>
 
-<!-- EDIT WEEK SLOT MODAL -->
-<div class="modal-overlay" id="weekEditModal">
-  <div class="modal">
-    <h3 id="weekEditTitle">Change meal</h3>
-    <div class="mf">
-      <div><label>Search Recipe</label><input type="text" id="weekEditSearch" oninput="filterWeekRecipes()" placeholder="type to search…" /></div>
-      <div><label>Or pick from list</label>
-        <select id="weekEditSelect" size="8" style="height:200px;overflow-y:auto"></select>
+<!-- WEEK SLOT EDIT MODAL -->
+<div class="overlay" id="weekEditModal">
+  <div class="modal modal-sm">
+    <div class="modal-head"><h3 id="weekEditTitle">Change meal</h3><button class="close-btn" onclick="closeWeekModal()">×</button></div>
+    <div class="modal-body">
+      <div class="mf">
+        <div><label>Search</label><input type="text" id="weekEditSearch" oninput="filterWeekRecipes()" placeholder="type to search…" /></div>
+        <div><label>Pick recipe</label><select id="weekEditSelect" size="7" style="height:190px"></select></div>
+      </div>
+      <div class="modal-acts">
+        <button class="btn btn-ghost" onclick="closeWeekModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="saveWeekSlot()">Save</button>
       </div>
     </div>
-    <div class="modal-acts">
-      <button class="btn btn-ghost" onclick="closeWeekModal()">Cancel</button>
-      <button class="btn btn-primary" onclick="saveWeekSlot()">Save</button>
+  </div>
+</div>
+
+<!-- ADD INVENTORY MODAL -->
+<div class="overlay" id="addModal">
+  <div class="modal modal-sm">
+    <div class="modal-head"><h3>Add Inventory Item</h3><button class="close-btn" onclick="closeAddModal()">×</button></div>
+    <div class="modal-body">
+      <div class="mf">
+        <div><label>Item Name</label><input type="text" id="newItemName" placeholder="e.g. lettuce or pasta_sauce" /></div>
+        <div><label>Category</label>
+          <select id="newItemCategory"><option value="vegetables">Vegetables</option><option value="pantry">Pantry / Western</option><option value="baking">Baking</option><option value="staples">Staples</option><option value="dairy">Dairy</option></select>
+        </div>
+        <div><label>Current Quantity</label><input type="text" id="newItemQty" placeholder="0" /></div>
+        <div><label>Unit</label>
+          <select id="newItemUnit"><option value="grams">grams</option><option value="ml">ml</option><option value="pieces">pieces</option><option value="slices">slices</option></select>
+        </div>
+        <div><label>Reorder Threshold</label><input type="text" id="newItemThreshold" placeholder="100" /></div>
+      </div>
+      <div class="modal-acts">
+        <button class="btn btn-ghost" onclick="closeAddModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="submitAddItem()">Add</button>
+      </div>
     </div>
   </div>
 </div>
 
 <script>
 const DAYS = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
-const MEALS = ["breakfast","lunch","dinner"];
 
 let allRecipes = [];
 let currentShoppingItems = [];
-let weekEditContext = {};
+let weekEditCtx = {};
+let currentRecipeId = null;
 
 document.getElementById('todayDate').textContent = new Date().toLocaleDateString('en-IN', {
   weekday: 'long', day: 'numeric', month: 'long'
@@ -317,6 +342,11 @@ function showTab(name, el) {
   if (name === 'week') loadWeekPlan();
 }
 
+function catTag(cat) {
+  const isBaking = cat === 'baking';
+  return `<span class="tag${isBaking?' baking':''}">${cat}</span>`;
+}
+
 // ── SUGGEST ──────────────────────────────────────────────────────────────
 
 async function getSuggestions() {
@@ -332,7 +362,7 @@ async function getSuggestions() {
 
   try {
     const res = await fetch('/api/suggest', {
-      method: 'POST', headers: {'Content-Type':'application/json'},
+      method:'POST', headers:{'Content-Type':'application/json'},
       body: JSON.stringify({prompt: fullPrompt, meal_type: mealType, people, recent_meals: []})
     });
     const data = await res.json();
@@ -343,14 +373,9 @@ async function getSuggestions() {
   btn.disabled = false; btn.textContent = 'Suggest →';
 }
 
-function catTag(cat) {
-  const baking = cat === 'baking';
-  return `<span class="tag${baking?' tag-baking':''}">${cat}</span>`;
-}
-
 function renderSuggestions(suggestions, people, mealType) {
   if (!suggestions?.length) {
-    document.getElementById('suggestionsArea').innerHTML = '<div class="empty">No results — try a different prompt.</div>';
+    document.getElementById('suggestionsArea').innerHTML = '<div class="empty">No results — try different prompt.</div>';
     return;
   }
   const cards = suggestions.map(s => {
@@ -358,7 +383,7 @@ function renderSuggestions(suggestions, people, mealType) {
     const bl = av.status==='ready'?'✓ Ready':av.status==='low'?'⚠ Low':'✗ Missing';
     const misses = av.missing.map(m=>`<div class="issue missing">✗ ${m.name.replace(/_/g,' ')}: need ${m.needed}g, have ${m.have}g</div>`).join('');
     const lows = av.low.map(l=>`<div class="issue low">⚠ ${l.name.replace(/_/g,' ')}: ${l.have}g left</div>`).join('');
-    return `<div class="recipe-card">
+    return `<div class="rcard" onclick="openRecipeModal('${s.id}')">
       <div class="card-top">
         <div>
           <div class="card-name">${s.name}</div>
@@ -369,7 +394,9 @@ function renderSuggestions(suggestions, people, mealType) {
       ${s.reason?`<div class="card-text">${s.reason}</div>`:''}
       ${s.pair_with?`<div class="card-accent">Pair: ${s.pair_with}</div>`:''}
       ${misses||lows?`<div class="issues">${misses}${lows}</div>`:''}
-      <div style="margin-top:10px"><button class="btn btn-primary btn-sm" onclick="confirmMeal('${s.id}','${mealType}',${people})">Add to today</button></div>
+      <div style="margin-top:10px" onclick="event.stopPropagation()">
+        <button class="btn btn-primary btn-sm" onclick="confirmMeal('${s.id}','${mealType}',${people})">Add to today</button>
+      </div>
     </div>`;
   }).join('');
 
@@ -385,10 +412,61 @@ async function confirmMeal(recipeId, mealType, people) {
   });
   const data = await res.json();
   if (data.confirmed) {
-    const n = data.low_stock.length;
-    alert(`✓ ${data.recipe} added!\n${n>0?`⚠ ${n} items now low — check Shopping tab.`:'Pantry looks good.'}`);
+    alert(`✓ ${data.recipe} added!\n${data.low_stock.length>0?`⚠ ${data.low_stock.length} items now low.`:'Pantry ok.'}`);
   }
 }
+
+// ── RECIPE DETAIL MODAL ──────────────────────────────────────────────────
+
+async function openRecipeModal(recipeId) {
+  currentRecipeId = recipeId;
+  document.getElementById('rModalName').textContent = 'Loading…';
+  document.getElementById('rModalMeta').innerHTML = '';
+  document.getElementById('rModalIngredients').innerHTML = '<div class="loading">Loading…</div>';
+  document.getElementById('rModalSteps').innerHTML = '';
+  document.getElementById('stepsBtn').textContent = '📋 Get Cooking Steps';
+  document.getElementById('stepsBtn').disabled = false;
+  document.getElementById('recipeModal').classList.add('open');
+
+  const res = await fetch(`/api/recipes/${recipeId}`);
+  const r = await res.json();
+
+  document.getElementById('rModalName').textContent = r.name;
+  document.getElementById('rModalMeta').innerHTML = `${catTag(r.category)} &nbsp;·&nbsp; <span style="color:var(--muted);font-size:12px">⏱ ${r.cook_time} min</span>`;
+
+  const chips = r.ingredients.map(i => {
+    const cls = i.status === 'ok' ? '' : ` ${i.status}`;
+    const warn = i.status !== 'ok' ? ` title="${i.status === 'missing' ? 'Out of stock' : 'Running low'}"` : '';
+    return `<span class="chip${cls}"${warn}>${i.name} · ${i.quantity}${i.unit}</span>`;
+  }).join('');
+  document.getElementById('rModalIngredients').innerHTML = `<div class="ing-list">${chips}</div>`;
+}
+
+async function loadSteps() {
+  const btn = document.getElementById('stepsBtn');
+  btn.disabled = true; btn.textContent = '⏳ Generating steps…';
+  document.getElementById('rModalSteps').innerHTML = '';
+
+  const res = await fetch(`/api/recipes/${currentRecipeId}/steps`);
+  const data = await res.json();
+
+  btn.style.display = 'none';
+  const stepsHtml = `
+    <div class="section-lbl">How to cook</div>
+    <ol class="steps-list">
+      ${data.steps.map((s, i) => `<li><span class="step-num">${i+1}</span><span>${s}</span></li>`).join('')}
+    </ol>`;
+  document.getElementById('rModalSteps').innerHTML = stepsHtml;
+}
+
+function closeRecipeModal() {
+  document.getElementById('recipeModal').classList.remove('open');
+  currentRecipeId = null;
+}
+
+document.getElementById('recipeModal').addEventListener('click', function(e) {
+  if (e.target === this) closeRecipeModal();
+});
 
 // ── WEEK PLAN ────────────────────────────────────────────────────────────
 
@@ -396,7 +474,7 @@ async function loadWeekPlan() {
   const res = await fetch('/api/plan/week');
   const data = await res.json();
   if (!data.has_plan) {
-    document.getElementById('weekArea').innerHTML = '<div class="empty">No plan yet. Click "Auto-Generate Week" to create one.</div>';
+    document.getElementById('weekArea').innerHTML = '<div class="empty">No plan yet. Click Auto-Generate.</div>';
     return;
   }
   renderWeekGrid(data.plan);
@@ -405,12 +483,12 @@ async function loadWeekPlan() {
 async function generateWeek() {
   const btn = document.getElementById('genWeekBtn');
   const people = parseInt(document.getElementById('weekPeople').value);
-  btn.disabled = true; btn.textContent = '✨ Generating…';
-  document.getElementById('weekArea').innerHTML = '<div class="loading">AI is planning your week… (this takes ~10 seconds)</div>';
+  btn.disabled = true; btn.textContent = '⏳ Generating…';
+  document.getElementById('weekArea').innerHTML = '<div class="loading">AI is planning your week — making 3 calls for zero repetition…</div>';
 
   try {
     const res = await fetch('/api/plan/week/generate', {
-      method: 'POST', headers: {'Content-Type':'application/json'},
+      method:'POST', headers:{'Content-Type':'application/json'},
       body: JSON.stringify({people})
     });
     const data = await res.json();
@@ -418,52 +496,47 @@ async function generateWeek() {
   } catch(e) {
     document.getElementById('weekArea').innerHTML = '<div class="empty">Error generating plan.</div>';
   }
-  btn.disabled = false; btn.textContent = '✨ Auto-Generate Week';
+  btn.disabled = false; btn.textContent = '✨ Auto-Generate';
 }
 
 function todayDayName() {
-  return new Date().toLocaleDateString('en-US', {weekday: 'long'});
+  return new Date().toLocaleDateString('en-US', {weekday:'long'});
 }
 
 function renderWeekGrid(plan) {
   const today = todayDayName();
-  let html = `<div class="week-grid">
-    <div class="week-header"></div>
-    ${DAYS.map(d => `<div class="week-header${d===today?' today-col':''}">${d.slice(0,3)}</div>`).join('')}`;
+  let html = `<div class="week-wrap"><div class="week-grid">
+    <div class="wh"></div>
+    ${DAYS.map(d => `<div class="wh${d===today?' today':''}">${d.slice(0,3)}<br><span style="font-size:10px;font-weight:400">${d===today?'Today':''}</span></div>`).join('')}`;
 
-  for (const mealType of MEALS) {
-    html += `<div class="meal-label">${mealType}</div>`;
+  for (const mt of ['breakfast','lunch','dinner']) {
+    html += `<div class="wml">${mt}</div>`;
     for (const day of DAYS) {
-      const meal = plan[day]?.[mealType];
-      const statusCls = meal?.availability || 'unknown';
-      const todayCls = day === today ? ' today-col' : '';
-      if (meal?.recipe_name) {
-        const cat = meal.category || '';
-        html += `<div class="week-cell${todayCls}" onclick="openWeekEdit('${day}','${mealType}')">
-          <div class="cell-status ${statusCls}"></div>
-          <div class="cell-name">${meal.recipe_name}</div>
-          ${cat ? `<div class="cell-cat">${cat}</div>` : ''}
+      const m = plan[day]?.[mt];
+      const todayCls = day === today ? ' today' : '';
+      const dotCls = m?.availability || 'unknown';
+      if (m?.recipe_name) {
+        html += `<div class="wcell${todayCls}" onclick="openWeekEdit('${day}','${mt}')">
+          <div class="dot ${dotCls}"></div>
+          <div class="cn">${m.recipe_name}</div>
+          ${m.category ? `<div class="cc">${m.category}</div>` : ''}
         </div>`;
       } else {
-        html += `<div class="week-cell${todayCls}" onclick="openWeekEdit('${day}','${mealType}')">
-          <div class="cell-empty">+ Add</div>
-        </div>`;
+        html += `<div class="wcell${todayCls}" onclick="openWeekEdit('${day}','${mt}')"><div class="cempty">+ Add</div></div>`;
       }
     }
   }
-  html += '</div>';
-
-  html += `<div style="margin-top:12px;font-size:11px;color:var(--muted);display:flex;gap:14px;align-items:center">
-    <span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-right:4px"></span>Ready</span>
-    <span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--yellow);margin-right:4px"></span>Low stock</span>
-    <span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--red);margin-right:4px"></span>Missing items</span>
+  html += `</div></div>
+  <div style="margin-top:10px;font-size:11px;color:var(--muted);display:flex;gap:14px">
+    <span><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-right:4px"></span>Ready</span>
+    <span><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--yellow);margin-right:4px"></span>Low stock</span>
+    <span><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--muted);margin-right:4px"></span>Missing</span>
   </div>`;
-
   document.getElementById('weekArea').innerHTML = html;
 }
 
 async function openWeekEdit(day, mealType) {
-  weekEditContext = {day, mealType};
+  weekEditCtx = {day, mealType};
   document.getElementById('weekEditTitle').textContent = `${day} — ${mealType}`;
 
   if (!allRecipes.length) {
@@ -471,7 +544,6 @@ async function openWeekEdit(day, mealType) {
     const data = await res.json();
     allRecipes = data.recipes;
   }
-
   populateWeekSelect(allRecipes);
   document.getElementById('weekEditSearch').value = '';
   document.getElementById('weekEditModal').classList.add('open');
@@ -479,37 +551,30 @@ async function openWeekEdit(day, mealType) {
 
 function filterWeekRecipes() {
   const q = document.getElementById('weekEditSearch').value.toLowerCase();
-  const filtered = q ? allRecipes.filter(r => r.name.toLowerCase().includes(q) || r.category.includes(q)) : allRecipes;
-  populateWeekSelect(filtered);
+  populateWeekSelect(q ? allRecipes.filter(r => r.name.toLowerCase().includes(q) || r.category.includes(q)) : allRecipes);
 }
 
 function populateWeekSelect(recipes) {
-  const sel = document.getElementById('weekEditSelect');
-  sel.innerHTML = recipes.map(r => `<option value="${r.id}" data-name="${r.name}">${r.name} (${r.category})</option>`).join('');
+  document.getElementById('weekEditSelect').innerHTML =
+    recipes.map(r => `<option value="${r.id}" data-name="${r.name}">${r.name} (${r.category})</option>`).join('');
 }
 
-function closeWeekModal() {
-  document.getElementById('weekEditModal').classList.remove('open');
-}
+function closeWeekModal() { document.getElementById('weekEditModal').classList.remove('open'); }
 
 async function saveWeekSlot() {
   const sel = document.getElementById('weekEditSelect');
   if (!sel.value) { closeWeekModal(); return; }
   const recipeName = sel.options[sel.selectedIndex].getAttribute('data-name');
-  const {day, mealType} = weekEditContext;
-
+  const {day, mealType} = weekEditCtx;
   await fetch('/api/plan/week/update', {
-    method: 'POST', headers: {'Content-Type':'application/json'},
+    method:'POST', headers:{'Content-Type':'application/json'},
     body: JSON.stringify({day_name: day, meal_type: mealType, recipe_name: recipeName, recipe_id: sel.value})
   });
-
   closeWeekModal();
   loadWeekPlan();
 }
 
-document.getElementById('weekEditModal').addEventListener('click', function(e) {
-  if (e.target === this) closeWeekModal();
-});
+document.getElementById('weekEditModal').addEventListener('click', function(e) { if(e.target===this) closeWeekModal(); });
 
 // ── TODAY ────────────────────────────────────────────────────────────────
 
@@ -517,57 +582,56 @@ async function loadToday() {
   document.getElementById('todayArea').innerHTML = '<div class="loading">Loading…</div>';
   const res = await fetch('/api/plan/today');
   const data = await res.json();
+
   if (!data.meals.length) {
-    document.getElementById('todayArea').innerHTML = '<div class="empty">No meals confirmed yet today. Go to Suggest or Week Plan.</div>';
+    document.getElementById('todayArea').innerHTML = `
+      <div class="empty">No meals planned for ${data.day || 'today'}.<br>
+      Go to Week Plan to generate the week, or use Suggest to add meals manually.</div>`;
     return;
   }
-  document.getElementById('todayArea').innerHTML = data.meals.map(m => `
-    <div class="meal-row">
-      <span class="meal-lbl">${m.meal_type}</span>
-      <span class="meal-name">${m.name}</span>
-      <span class="meal-ppl">${m.people} people</span>
-    </div>`).join('');
+
+  document.getElementById('todayArea').innerHTML = `
+    <div style="font-size:12px;color:var(--muted);margin-bottom:12px">${data.day || ''}</div>
+    ${data.meals.map(m => `
+      <div class="meal-row">
+        <span class="meal-lbl">${m.meal_type}</span>
+        <span class="meal-name">${m.name}</span>
+        <span class="meal-src">${m.source === 'week_plan' ? '📅 from week plan' : '✓ confirmed'}</span>
+      </div>`).join('')}`;
 }
 
 // ── RECIPES BROWSE ───────────────────────────────────────────────────────
 
 async function loadRecipes() {
-  if (allRecipes.length) { renderRecipeGrid(allRecipes); return; }
-  const res = await fetch('/api/recipes');
-  const data = await res.json();
-  allRecipes = data.recipes;
+  if (!allRecipes.length) {
+    const res = await fetch('/api/recipes');
+    const data = await res.json();
+    allRecipes = data.recipes;
+  }
   renderRecipeGrid(allRecipes);
 }
 
 function filterRecipes() {
   const q = document.getElementById('recipeSearch').value.toLowerCase();
   const cat = document.getElementById('recipeCatFilter').value;
-  const filtered = allRecipes.filter(r =>
-    (!q || r.name.toLowerCase().includes(q)) &&
-    (!cat || r.category === cat)
-  );
-  renderRecipeGrid(filtered);
+  renderRecipeGrid(allRecipes.filter(r =>
+    (!q || r.name.toLowerCase().includes(q)) && (!cat || r.category === cat)
+  ));
 }
 
 function renderRecipeGrid(recipes) {
   document.getElementById('recipeCount').textContent = `${recipes.length} recipes`;
-  if (!recipes.length) {
-    document.getElementById('recipesGrid').innerHTML = '<div class="empty">No recipes found.</div>';
-    return;
-  }
+  if (!recipes.length) { document.getElementById('recipesGrid').innerHTML = '<div class="empty">No recipes found.</div>'; return; }
   document.getElementById('recipesGrid').innerHTML = recipes.map(r => {
     const av = r.availability || {};
-    const missingNames = new Set((av.missing||[]).map(m=>m.name));
-    const lowNames = new Set((av.low||[]).map(l=>l.name));
     const bl = av.status==='ready'?'✓ Ready':av.status==='low'?'⚠ Low':'✗ Missing';
-    const badgeCls = `badge-${av.status||'unknown'}`;
-    return `<div class="recipe-card">
+    return `<div class="rcard" onclick="openRecipeModal('${r.id}')">
       <div class="card-top">
         <div>
           <div class="card-name">${r.name}</div>
           <div class="card-sub">${catTag(r.category)} · ${r.cook_time||20} min</div>
         </div>
-        <span class="badge ${badgeCls}">${bl}</span>
+        <span class="badge badge-${av.status||'unknown'}">${bl}</span>
       </div>
     </div>`;
   }).join('');
@@ -578,37 +642,31 @@ function renderRecipeGrid(recipes) {
 async function loadInventory() {
   const res = await fetch('/api/inventory');
   const data = await res.json();
-
   document.getElementById('invStats').innerHTML = `
-    <div class="stat"><div class="stat-v green">${data.items.length}</div><div class="stat-l">Total Items</div></div>
-    <div class="stat"><div class="stat-v yellow">${data.low_count}</div><div class="stat-l">Low Stock</div></div>
-    <div class="stat"><div class="stat-v red">${data.out_count}</div><div class="stat-l">Out of Stock</div></div>`;
+    <div class="stat"><div class="stat-v green">${data.items.length}</div><div class="stat-l">Total</div></div>
+    <div class="stat"><div class="stat-v yellow">${data.low_count}</div><div class="stat-l">Low</div></div>
+    <div class="stat"><div class="stat-v red">${data.out_count}</div><div class="stat-l">Out</div></div>`;
 
   const byCategory = {};
-  data.items.forEach(item => {
-    const cat = item.category || 'other';
-    if (!byCategory[cat]) byCategory[cat] = [];
-    byCategory[cat].push(item);
-  });
+  data.items.forEach(i => { if (!byCategory[i.category]) byCategory[i.category] = []; byCategory[i.category].push(i); });
+  const catOrder = ['vegetables','dairy','pantry','baking','staples'];
+  const ordered = [...catOrder.filter(c=>byCategory[c]), ...Object.keys(byCategory).filter(c=>!catOrder.includes(c))];
 
-  const catOrder = ['vegetables', 'dairy', 'pantry', 'baking', 'staples'];
-  const orderedCats = [...catOrder.filter(c => byCategory[c]), ...Object.keys(byCategory).filter(c => !catOrder.includes(c))];
-
-  document.getElementById('inventoryArea').innerHTML = orderedCats.map(cat => `
+  document.getElementById('inventoryArea').innerHTML = ordered.map(cat => `
     <div class="inv-sec">
       <h3>${cat} (${byCategory[cat].length})</h3>
       <div class="inv-grid">
         ${byCategory[cat].map(item => {
-          const cls = item.quantity === 0 ? 'out' : item.quantity <= item.threshold ? 'low' : '';
+          const cls = item.quantity===0?'out':item.quantity<=item.threshold?'low':'';
           const dn = item.item_name.replace(/_/g,' ');
-          const dq = item.quantity > 0 ? `${item.quantity}${item.unit}` : 'OUT';
+          const dq = item.quantity>0?`${item.quantity}${item.unit}`:'OUT';
           const k = item.item_name;
-          return `<div class="inv-item ${cls}" id="row-${k}">
+          return `<div class="inv-item ${cls}">
             <span class="inv-n" title="${dn}">${dn}</span>
             <span class="inv-q" id="qty-${k}">${dq}</span>
             <div class="inv-acts">
-              <button class="btn-icon" onclick="startEdit('${k}',${item.quantity},'${item.unit}')" title="Edit">✏</button>
-              <button class="btn-icon del" onclick="deleteItem('${k}','${dn}')" title="Remove">✕</button>
+              <button class="btn-icon" onclick="startEdit('${k}',${item.quantity},'${item.unit}')">✏</button>
+              <button class="btn-icon del" onclick="deleteItem('${k}','${dn}')">✕</button>
             </div>
           </div>`;
         }).join('')}
@@ -621,7 +679,7 @@ function startEdit(key, qty, unit) {
   if (!el) return;
   el.outerHTML = `<input class="edit-inp" id="ei-${key}" type="number" value="${qty}" min="0" step="50"
     onkeydown="if(event.key==='Enter')saveEdit('${key}','${unit}');if(event.key==='Escape')loadInventory();" />
-    <button class="btn-icon" onclick="saveEdit('${key}','${unit}')" title="Save">✓</button>`;
+    <button class="btn-icon" onclick="saveEdit('${key}','${unit}')">✓</button>`;
   const inp = document.getElementById(`ei-${key}`);
   if (inp) { inp.focus(); inp.select(); }
 }
@@ -637,38 +695,32 @@ async function saveEdit(key, unit) {
 }
 
 async function deleteItem(key, name) {
-  if (!confirm(`Remove "${name}" from inventory?`)) return;
+  if (!confirm(`Remove "${name}"?`)) return;
   await fetch(`/api/inventory/${encodeURIComponent(key)}`, {method:'DELETE'});
   loadInventory();
 }
 
-function openAddModal() {
-  document.getElementById('addModal').classList.add('open');
-  document.getElementById('newItemName').focus();
-}
-
+function openAddModal() { document.getElementById('addModal').classList.add('open'); document.getElementById('newItemName').focus(); }
 function closeAddModal() {
   document.getElementById('addModal').classList.remove('open');
-  ['newItemName','newItemQty','newItemThreshold'].forEach(id => document.getElementById(id).value = '');
+  ['newItemName','newItemQty','newItemThreshold'].forEach(id => document.getElementById(id).value='');
 }
 
 async function submitAddItem() {
   const name = document.getElementById('newItemName').value.trim();
-  if (!name) { alert('Item name required'); return; }
-  const qty = parseFloat(document.getElementById('newItemQty').value)||0;
-  const threshold = parseFloat(document.getElementById('newItemThreshold').value)||100;
-  const category = document.getElementById('newItemCategory').value;
-  const unit = document.getElementById('newItemUnit').value;
+  if (!name) { alert('Name required'); return; }
   const res = await fetch('/api/inventory/add', {
     method:'POST', headers:{'Content-Type':'application/json'},
-    body: JSON.stringify({item_name: name, category, quantity: qty, unit, threshold})
+    body: JSON.stringify({item_name:name, category:document.getElementById('newItemCategory').value,
+      quantity: parseFloat(document.getElementById('newItemQty').value)||0,
+      unit: document.getElementById('newItemUnit').value,
+      threshold: parseFloat(document.getElementById('newItemThreshold').value)||100})
   });
-  if (res.status === 409) { alert('Item already exists'); return; }
-  closeAddModal();
-  loadInventory();
+  if (res.status===409) { alert('Item already exists'); return; }
+  closeAddModal(); loadInventory();
 }
 
-document.getElementById('addModal').addEventListener('click', function(e) { if (e.target===this) closeAddModal(); });
+document.getElementById('addModal').addEventListener('click', function(e) { if(e.target===this) closeAddModal(); });
 
 // ── SHOPPING ─────────────────────────────────────────────────────────────
 
@@ -677,20 +729,16 @@ async function loadShopping() {
   const res = await fetch('/api/shopping/list');
   const data = await res.json();
   currentShoppingItems = data.items;
-
   if (!data.items.length) {
-    document.getElementById('shoppingArea').innerHTML = '<div class="empty">✓ All stocked up. Nothing to order.</div>';
-    document.getElementById('shoppingActions').style.display = 'none';
-    return;
+    document.getElementById('shoppingArea').innerHTML = '<div class="empty">✓ All stocked up.</div>';
+    document.getElementById('shoppingActions').style.display = 'none'; return;
   }
-
   document.getElementById('shoppingArea').innerHTML = `
     <div style="font-size:12px;color:var(--muted);margin-bottom:10px">${data.total_items} items to restock</div>
-    ${data.items.map(item => `
-      <div class="shop-row">
-        <div><div class="shop-n">${item.name.replace(/_/g,' ')}</div><div class="shop-d">Have ${item.current}${item.unit} · threshold ${item.threshold}${item.unit}</div></div>
-        <div class="shop-q">Order ${item.order_qty}${item.unit}</div>
-      </div>`).join('')}`;
+    ${data.items.map(i=>`<div class="shop-row">
+      <div><div class="shop-n">${i.name.replace(/_/g,' ')}</div><div class="shop-d">Have ${i.current}${i.unit} · threshold ${i.threshold}${i.unit}</div></div>
+      <div class="shop-q">Order ${i.order_qty}${i.unit}</div>
+    </div>`).join('')}`;
   document.getElementById('shoppingActions').style.display = 'block';
 }
 
@@ -702,7 +750,7 @@ async function confirmOrder() {
     body: JSON.stringify({items: currentShoppingItems})
   });
   const data = await res.json();
-  alert(`✓ ${data.ordered} items ordered. Inventory updated.`);
+  alert(`✓ ${data.ordered} items ordered.`);
   loadShopping();
 }
 </script>

@@ -2104,55 +2104,6 @@
       ]
     },
     {
-      "id": "upma",
-      "name": "Upma",
-      "category": "breakfast",
-      "frequency": "weekly",
-      "cook_time_minutes": 20,
-      "ingredients": [
-        {
-          "name": "suji",
-          "quantity": 400,
-          "unit": "grams"
-        },
-        {
-          "name": "onion",
-          "quantity": 150,
-          "unit": "grams"
-        },
-        {
-          "name": "green_chilli",
-          "quantity": 10,
-          "unit": "grams"
-        },
-        {
-          "name": "tomato",
-          "quantity": 100,
-          "unit": "grams"
-        },
-        {
-          "name": "coriander_leaves",
-          "quantity": 15,
-          "unit": "grams"
-        },
-        {
-          "name": "oil",
-          "quantity": 40,
-          "unit": "ml"
-        },
-        {
-          "name": "mustard_seeds",
-          "quantity": 5,
-          "unit": "grams"
-        },
-        {
-          "name": "salt",
-          "quantity": 8,
-          "unit": "grams"
-        }
-      ]
-    },
-    {
       "id": "aloo_sabzi_puri",
       "name": "Aloo Curry with Puri",
       "category": "breakfast",

@@ -202,7 +202,13 @@ def generate_shopping_list() -> list[dict]:
 
 
 def generate_week_plan(people: int = 3) -> dict:
-    """AI generates a full Mon-Sun meal plan (breakfast + lunch + dinner)."""
+    """
+    Generates Mon-Sun plan one meal-type at a time to enforce strict no-repeat.
+    Three separate AI calls (breakfast / lunch / dinner) each see what's already
+    been assigned so they can't duplicate across the week.
+    """
+    import random, time
+
     inventory = get_inventory_snapshot()
     recipes = get_all_recipes()
 
@@ -211,66 +217,140 @@ def generate_week_plan(people: int = 3) -> dict:
         avail = check_recipe_availability(r, inventory, people)
         checked.append({**r, "availability": avail})
 
-    ready = [f'{r["name"]} ({r["category"]})' for r in checked if r["availability"]["status"] == "ready"]
-    low   = [f'{r["name"]} ({r["category"]})' for r in checked if r["availability"]["status"] == "low"]
+    recipe_map = {r["name"]: r for r in checked}
 
-    system = """You are a weekly meal planner for a vegetarian North Indian family in Gurgaon (3 people).
-Plan diverse, realistic meals. Vary categories across the week. Don't repeat the same dish.
-Breakfast = light (poha/upma/chila/oats/sandwich). Lunch = filling (dal+sabzi, pasta, noodles, wrap).
-Dinner = medium (lighter than lunch, wraps/salad/sabzi+roti ok).
-Respond ONLY with valid JSON."""
+    # Build category pools (prefer READY, include LOW as fallback)
+    by_cat = {}
+    for r in checked:
+        cat = r["category"]
+        if cat not in by_cat:
+            by_cat[cat] = {"ready": [], "low": []}
+        status = r["availability"]["status"]
+        if status == "ready":
+            by_cat[cat]["ready"].append(r["name"])
+        elif status == "low":
+            by_cat[cat]["low"].append(r["name"])
 
-    prompt = f"""Plan a full Mon-Sun week for breakfast, lunch, dinner.
+    def pool(cats):
+        out = []
+        for cat in cats:
+            if cat in by_cat:
+                out += by_cat[cat]["ready"] + by_cat[cat]["low"]
+        random.shuffle(out)
+        return out
 
-READY recipes (prefer these): {', '.join(ready[:40])}
-LOW STOCK (use sparingly): {', '.join(low[:15])}
+    DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
+    system = (
+        "You are a meal planner for a vegetarian North Indian family in Gurgaon. "
+        "Respond ONLY with valid JSON. No markdown, no explanation."
+    )
+
+    used_all = []  # all names used so far across ALL meal types
+
+    def call_ai(meal_type: str, candidates: list, special_rules: str) -> dict:
+        """Ask AI to pick one recipe per day for this meal_type, no repeats."""
+        avoid = list(set(used_all))
+        # shuffle candidates so AI gets a different ordering each call
+        random.shuffle(candidates)
+
+        prompt = f"""Assign one recipe to each day of the week for {meal_type}.
+
+AVAILABLE RECIPES (pick ONLY from this list):
+{chr(10).join(f'- {n}' for n in candidates[:35])}
+
+ALREADY USED THIS WEEK (do NOT repeat any of these):
+{', '.join(avoid) if avoid else 'none yet'}
 
 Rules:
-- No dish repeated more than twice in the week
-- Vary the category each day (don't do dal for lunch Mon AND Tue)
-- Breakfast must be quick (under 20 min)
-- Include at least 1 pasta, 1 noodles, 1 wrap, 1 burger or sandwich across the week
-- Saturday dinner = special/fun (burger, pasta, brownie for dessert)
-- Sunday lunch = elaborate (rajma/chole/biryani level)
+- Every day must have a DIFFERENT recipe
+- Never pick from the "already used" list
+- {special_rules}
 
 Respond with JSON:
 {{
-  "days": {{
-    "Monday": {{"breakfast": "recipe name", "lunch": "recipe name", "dinner": "recipe name"}},
-    "Tuesday": {{"breakfast": "...", "lunch": "...", "dinner": "..."}},
-    "Wednesday": {{"breakfast": "...", "lunch": "...", "dinner": "..."}},
-    "Thursday": {{"breakfast": "...", "lunch": "...", "dinner": "..."}},
-    "Friday": {{"breakfast": "...", "lunch": "...", "dinner": "..."}},
-    "Saturday": {{"breakfast": "...", "lunch": "...", "dinner": "..."}},
-    "Sunday": {{"breakfast": "...", "lunch": "...", "dinner": "..."}}
-  }}
+  "Monday": "exact recipe name from list",
+  "Tuesday": "exact recipe name from list",
+  "Wednesday": "exact recipe name from list",
+  "Thursday": "exact recipe name from list",
+  "Friday": "exact recipe name from list",
+  "Saturday": "exact recipe name from list",
+  "Sunday": "exact recipe name from list"
 }}"""
 
-    response = _client().chat.completions.create(
-        model="llama-3.3-70b-versatile",
-        messages=[
-            {"role": "system", "content": system},
-            {"role": "user", "content": prompt}
-        ],
-        temperature=0.5,
-        response_format={"type": "json_object"}
+        resp = _client().chat.completions.create(
+            model="llama-3.3-70b-versatile",
+            messages=[{"role": "system", "content": system}, {"role": "user", "content": prompt}],
+            temperature=0.8,
+            response_format={"type": "json_object"},
+            seed=random.randint(0, 99999),
+        )
+        result = json.loads(resp.choices[0].message.content)
+        # Validate — fall back to first candidate if AI hallucinated
+        name_set = set(candidates)
+        for day in DAYS:
+            if result.get(day) not in name_set:
+                for c in candidates:
+                    if c not in used_all and c not in result.values():
+                        result[day] = c
+                        break
+        used_all.extend(result.values())
+        return result
+
+    # Three separate calls — guarantees cross-meal-type variety
+    bf_candidates = pool(["breakfast", "sandwich"])
+    lunch_candidates = pool(["dal", "sabzi", "pasta", "noodles", "rice", "wrap", "burger"])
+    dinner_candidates = pool(["sabzi", "wrap", "salad", "sandwich", "pasta", "dal", "noodles"])
+
+    breakfast_plan = call_ai(
+        "breakfast",
+        bf_candidates,
+        "Keep it quick (under 20 min). Poha/chila/oats/sandwich are ideal. Saturday = fun (sandwich or burger). Sunday = hearty (paratha ok)."
+    )
+    lunch_plan = call_ai(
+        "lunch",
+        lunch_candidates,
+        "Filling meal. Monday=dal sabzi. Wednesday=pasta or noodles. Friday=wrap or burger. Sunday=elaborate (Rajma/Chole/Biryani). Saturday=special."
+    )
+    dinner_plan = call_ai(
+        "dinner",
+        dinner_candidates,
+        "Lighter than lunch. Mix sabzi+roti, salads, wraps. Friday=fun dinner. Saturday=celebratory (pasta/burger). Avoid heavy dal-rice combos."
     )
 
-    ai_result = json.loads(response.choices[0].message.content)
-    days = ai_result.get("days", {})
-
-    recipe_map = {r["name"]: r for r in checked}
-
+    # Merge into final structure
     result = {}
-    for day, meals in days.items():
+    for day in DAYS:
         result[day] = {}
-        for meal_type, recipe_name in meals.items():
+        for meal_type, day_plan in [("breakfast", breakfast_plan), ("lunch", lunch_plan), ("dinner", dinner_plan)]:
+            recipe_name = day_plan.get(day, "")
             recipe = recipe_map.get(recipe_name)
             result[day][meal_type] = {
                 "recipe_id": recipe["id"] if recipe else None,
                 "recipe_name": recipe_name,
                 "category": recipe["category"] if recipe else "unknown",
-                "availability": recipe["availability"]["status"] if recipe else "unknown"
+                "availability": recipe["availability"]["status"] if recipe else "unknown",
             }
 
     return result
+
+
+def get_recipe_steps(recipe_id: str, recipe_name: str, category: str, ingredients: list) -> list[str]:
+    """Generate cooking steps for a recipe using AI. Called once, cached in DB."""
+    ing_list = ", ".join(f"{i['name'].replace('_',' ')} ({i['quantity']}g)" for i in ingredients[:12])
+
+    prompt = f"""Write clear step-by-step cooking instructions for "{recipe_name}" ({category}).
+Ingredients used: {ing_list}
+
+Give 6-10 practical steps a home cook in India would follow.
+Each step should be one sentence, action-focused.
+Respond with JSON: {{"steps": ["step 1...", "step 2...", ...]}}"""
+
+    resp = _client().chat.completions.create(
+        model="llama-3.3-70b-versatile",
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.2,
+        response_format={"type": "json_object"},
+    )
+    result = json.loads(resp.choices[0].message.content)
+    return result.get("steps", [])

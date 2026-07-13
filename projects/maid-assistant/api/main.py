@@ -9,7 +9,7 @@ from pydantic import BaseModel
 from pathlib import Path
 from datetime import date
 from api.db import setup, get_conn
-from api.ai import suggest_meals, check_recipe_availability, get_inventory_snapshot, generate_shopping_list, get_all_recipes, generate_week_plan
+from api.ai import suggest_meals, check_recipe_availability, get_inventory_snapshot, generate_shopping_list, get_all_recipes, generate_week_plan, get_recipe_steps
 
 app = FastAPI(title="Maid Assistant")
 
@@ -196,15 +196,51 @@ def confirm_meal(req: ConfirmMealRequest):
 @app.get("/api/plan/today")
 def today_plan():
     today = str(date.today())
+    today_day = date.today().strftime("%A")  # "Monday", "Tuesday", etc.
+
+    # Get week plan for today's day
+    wk = _week_key()
+
+    meals = []
+    seen_meal_types = set()
+
     with get_conn() as conn:
-        rows = conn.execute("""
-            SELECT mp.meal_type, r.name, r.category, mp.people
+        # 1. Week plan slots for today
+        week_rows = conn.execute("""
+            SELECT meal_type, recipe_name, recipe_id
+            FROM week_plans
+            WHERE week_key = ? AND day_name = ?
+            ORDER BY CASE meal_type WHEN 'breakfast' THEN 1 WHEN 'lunch' THEN 2 WHEN 'dinner' THEN 3 ELSE 4 END
+        """, (wk, today_day)).fetchall()
+
+        for r in week_rows:
+            seen_meal_types.add(r["meal_type"])
+            meals.append({
+                "meal_type": r["meal_type"],
+                "name": r["recipe_name"],
+                "source": "week_plan",
+                "people": 3
+            })
+
+        # 2. Any manually confirmed meals not already covered
+        confirmed_rows = conn.execute("""
+            SELECT mp.meal_type, r.name, mp.people
             FROM meal_plans mp
             JOIN recipes r ON r.id = mp.recipe_id
             WHERE mp.plan_date = ? AND mp.confirmed = 1
             ORDER BY mp.id
         """, (today,)).fetchall()
-    return {"date": today, "meals": [dict(r) for r in rows]}
+
+        for r in confirmed_rows:
+            if r["meal_type"] not in seen_meal_types:
+                meals.append({
+                    "meal_type": r["meal_type"],
+                    "name": r["name"],
+                    "source": "confirmed",
+                    "people": r["people"]
+                })
+
+    return {"date": today, "day": today_day, "meals": meals}
 
 
 # --- Shopping ---
@@ -260,6 +296,68 @@ def list_recipes(category: str = None):
         result.append({**dict(r), "availability": avail})
 
     return {"recipes": result}
+
+
+@app.get("/api/recipes/{recipe_id}")
+def get_recipe(recipe_id: str):
+    with get_conn() as conn:
+        recipe = conn.execute("SELECT * FROM recipes WHERE id = ?", (recipe_id,)).fetchone()
+        if not recipe:
+            raise HTTPException(404, "Recipe not found")
+        ings = conn.execute(
+            "SELECT item_name, quantity, unit FROM recipe_ingredients WHERE recipe_id = ? ORDER BY item_name",
+            (recipe_id,)
+        ).fetchall()
+        inv_row = conn.execute("SELECT item_name, quantity FROM inventory").fetchall()
+
+    inventory = {r["item_name"]: r["quantity"] for r in inv_row}
+    ingredients = []
+    for i in ings:
+        have = inventory.get(i["item_name"], 0)
+        needed = round(i["quantity"] * (3 / 6.0))  # scale to 3 people
+        ingredients.append({
+            "name": i["item_name"].replace("_", " "),
+            "quantity": needed,
+            "unit": i["unit"],
+            "have": have,
+            "status": "ok" if have >= needed else ("low" if have > 0 else "missing")
+        })
+
+    return {
+        "id": recipe["id"],
+        "name": recipe["name"],
+        "category": recipe["category"],
+        "cook_time": recipe["cook_time"],
+        "ingredients": ingredients,
+    }
+
+
+@app.get("/api/recipes/{recipe_id}/steps")
+def get_steps(recipe_id: str):
+    with get_conn() as conn:
+        cached = conn.execute("SELECT steps FROM recipe_steps WHERE recipe_id = ?", (recipe_id,)).fetchone()
+        if cached:
+            import json as _json
+            return {"recipe_id": recipe_id, "steps": _json.loads(cached["steps"]), "cached": True}
+
+        recipe = conn.execute("SELECT name, category FROM recipes WHERE id = ?", (recipe_id,)).fetchone()
+        if not recipe:
+            raise HTTPException(404, "Recipe not found")
+        ings = conn.execute(
+            "SELECT item_name, quantity FROM recipe_ingredients WHERE recipe_id = ?", (recipe_id,)
+        ).fetchall()
+
+    ingredients = [{"name": i["item_name"], "quantity": i["quantity"]} for i in ings]
+    steps = get_recipe_steps(recipe_id, recipe["name"], recipe["category"], ingredients)
+
+    with get_conn() as conn:
+        import json as _json
+        conn.execute(
+            "INSERT OR REPLACE INTO recipe_steps (recipe_id, steps) VALUES (?,?)",
+            (recipe_id, _json.dumps(steps))
+        )
+
+    return {"recipe_id": recipe_id, "steps": steps, "cached": False}
 
 
 # --- Week Plan ---
