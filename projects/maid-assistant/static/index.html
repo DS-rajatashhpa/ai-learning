@@ -108,11 +108,14 @@ select option { background: #1a1d27; }
 .wcell { background: var(--card); border: 1px solid var(--border); border-radius: 7px; padding: 7px 9px; min-height: 55px; cursor: pointer; position: relative; transition: border 0.1s; }
 .wcell:hover { border-color: var(--accent); }
 .wcell.today { border-color: #3a3d5e; }
-.cn { font-size: 11px; font-weight: 500; line-height: 1.3; }
+.cn { font-size: 11px; font-weight: 500; line-height: 1.3; padding-right: 16px; }
 .cc { font-size: 10px; color: var(--muted); margin-top: 2px; }
 .dot { position: absolute; top: 5px; right: 5px; width: 7px; height: 7px; border-radius: 50%; }
 .dot.ready { background: var(--accent); } .dot.low { background: var(--yellow); } .dot.missing,.dot.unknown { background: var(--muted); }
 .cempty { color: var(--muted); font-size: 11px; font-style: italic; }
+.swap-btn { display: none; position: absolute; bottom: 5px; right: 5px; background: var(--border); border: none; border-radius: 4px; color: var(--muted); font-size: 10px; padding: 2px 5px; cursor: pointer; line-height: 1.4; }
+.wcell:hover .swap-btn { display: block; }
+.swap-btn:hover { background: var(--accent); color: #000; }
 
 /* Recipe filter */
 .rfilt { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; align-items: center; }
@@ -516,10 +519,12 @@ function renderWeekGrid(plan) {
       const todayCls = day === today ? ' today' : '';
       const dotCls = m?.availability || 'unknown';
       if (m?.recipe_name) {
-        html += `<div class="wcell${todayCls}" onclick="openWeekEdit('${day}','${mt}')">
+        const rid = m.recipe_id ? `'${m.recipe_id}'` : 'null';
+        html += `<div class="wcell${todayCls}" onclick="${m.recipe_id ? `openRecipeModal('${m.recipe_id}')` : `openWeekEdit('${day}','${mt}')`}">
           <div class="dot ${dotCls}"></div>
           <div class="cn">${m.recipe_name}</div>
           ${m.category ? `<div class="cc">${m.category}</div>` : ''}
+          <button class="swap-btn" onclick="event.stopPropagation();openWeekEdit('${day}','${mt}')">swap</button>
         </div>`;
       } else {
         html += `<div class="wcell${todayCls}" onclick="openWeekEdit('${day}','${mt}')"><div class="cempty">+ Add</div></div>`;
